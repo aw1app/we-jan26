@@ -9,14 +9,33 @@
  /* id selector example */
  #p123 { font-size: 60px ; }
 
-
  /* class selector example */
 .class1 {font-size: 42px ; color: aqua; }
+
+td {
+background-image: url('media/image2.png');
+text-align: center;
+}
+
+[attr1] {
+    font-size: 36px;
+}
 
 </style>
 
 <h1 class="class1">Welcome to AmaZON</h1>
 <h1 > BEST online shopping since 2000 </h1>
+
+<span attr1="val1"> 12 </span>
+<span attr1="val2"> 13 </span>
+<span attr2="val3"> 14 </span>
+<span attr2="val5"> 15 </span>
+
+<table border="1">
+    <tr><td rowspan="8">777777777777777</td><td>78</td></tr>
+    <tr><td>88</td><td>78</td></tr>
+     <tr><td>88</td><td attr1="val1">78</td></tr>
+</table>
 
 <p id="p123">P 1</p>
 <p>P 2</p>
@@ -27,6 +46,8 @@
 
 <div> Div 1</div>
 <div> Div 2</div>
+
+
 
 
 </html>
