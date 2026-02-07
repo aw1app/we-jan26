@@ -28,7 +28,7 @@
     };
 
     // testing
-    console.log ( "Student 1 is eligible to vote? " + isGreaterThan18(student1) );
+    console.log("Student 1 is eligible to vote? " + isGreaterThan18(student1));
 
     let student2 = {
         name: "Madana",
@@ -37,8 +37,54 @@
     };
 
 
-    console.log ( "Student 2 is eligible to vote? " + isGreaterThan18(student2) );
+    console.log("Student 2 is eligible to vote? " + isGreaterThan18(student2));
 </script>
 
+<body>
+    <div id="stddetails"></div>
+    <script>
+        let student3 = {
+            name: "anuj",
+            age: 25,
+            email: "anuj@gmail.com",
+        };
+
+        document.getElementById("stddetails").innerHTML = `
+<b>Name</b>: ${student3.name}<br>
+<b>Age</b>: ${student3.age}<br>
+<b>Eamil</b>: ${student3.email}<br>
+<b>Is Eligible for vote</b>: ${isGreaterThan18(student1)}`;
+    </script>
+
+
+
+    <script>
+        // demonstration object creation using function.
+        console.log("---demonstration object creation using function.----")
+        console.log("");
+        
+        function Car(name, price, mileage) {
+            this.name = name;
+            this.price = price;
+            this.mileage = mileage;
+        }
+
+        let car1 = new Car("Maruti Swift", 6000000, 80);
+        console.log("Name of the car 1 is ", car1.name);
+        console.log("Price of the car 1 is ", car1.price);
+        console.log("Mileage of the car 1 is ", car1.mileage);
+
+
+         let car2 = new Car("Tata Sumo", 16000000, 180);
+        console.log("Name of the car 2 is ", car2.name);
+        console.log("Price of the car 2 is ", car2.price);
+        console.log("Mileage of the car 2 is ", car2.mileage);
+    </script>
+
+    <script>
+        //TASK-3 Create a function to compare mileages of two cars.
+    </script>
+
+</body>
 
 </html>
