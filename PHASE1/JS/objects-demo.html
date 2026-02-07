@@ -4,12 +4,12 @@
 
 <script>
 
-    let rollNumber=100;
+    let rollNumber = 100;
 
     let student1 = {
         name: "Sudhir",
         age: 25,
-        email : "sudhir@gmail.com"
+        email: "sudhir@gmail.com"
     };
 
     console.log(student1);
@@ -19,9 +19,25 @@
 </script>
 
 <script>
-// TASK-2: Create a function that will accept a student object and return true or false based 
-// on if the age is > 18 or not
+    // TASK-2: Create a function that will accept a student object and return true or false based 
+    // on if the age is > 18 or not
 
+    // SOLUTION:
+    function isGreaterThan18(student) {
+        return student.age > 18;
+    };
+
+    // testing
+    console.log ( "Student 1 is eligible to vote? " + isGreaterThan18(student1) );
+
+    let student2 = {
+        name: "Madana",
+        age: 5,
+        email: "Madana@gmail.com"
+    };
+
+
+    console.log ( "Student 2 is eligible to vote? " + isGreaterThan18(student2) );
 </script>
 
 
