@@ -62,7 +62,7 @@
         // demonstration object creation using function.
         console.log("---demonstration object creation using function.----")
         console.log("");
-        
+
         function Car(name, price, mileage) {
             this.name = name;
             this.price = price;
@@ -75,7 +75,7 @@
         console.log("Mileage of the car 1 is ", car1.mileage);
 
 
-         let car2 = new Car("Tata Sumo", 16000000, 180);
+        let car2 = new Car("Tata Sumo", 16000000, 180);
         console.log("Name of the car 2 is ", car2.name);
         console.log("Price of the car 2 is ", car2.price);
         console.log("Mileage of the car 2 is ", car2.mileage);
@@ -84,6 +84,17 @@
     <script>
         //TASK-3 Create a function to compare mileages of two cars.
         // print the name of the car having more mileage
+
+        //SOLUTION:
+        function mileageComparison(carX, carY) {
+            if (carX.mileage > carY.mileage) {
+                console.log(carX.name + " mileage is greater " + carY.name);
+            }
+            else {
+                console.log(carY.name + " mileage is greater " + carX.name);
+            }
+        }
+        console.log(mileageComparison(car1, car2));
     </script>
 
 </body>
