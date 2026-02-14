@@ -3,22 +3,26 @@
 <html>
 <script>
 
+    console.log("0. x is  ", x);
+
     var x = 10;
 
     console.log("1. x outside func1 ", x);
 
     function func1() {
-        var y1 = 15;
+        console.log("0. y is", y);
+
+        var y = 15;
 
         console.log("x inside func1 ", x);
 
-        console.log("y1 inside func1 ", y1);
+        console.log("y inside func1 ", y);
 
         {
-            var z=25;
+            var z = 25;
             console.log("z inside func1 and inside its block ", z);
         }
-         console.log("z inside func1 and outside its block ", z);
+        console.log("z inside func1 and outside its block ", z);
 
     }
 
@@ -27,12 +31,16 @@
     func1();
     // console.log("y outside func1 ", y); // ERROR
 
+    var x = 100;
+
+
+    var x = 1000;
 </script>
 
 
 <script>
     console.log("using let keyword ... ");
-
+    // console.log("0. x1 is  ", x1);
     let x1 = 10;
 
     console.log("1. x1 outside func1 ", x1);
@@ -45,14 +53,14 @@
         console.log("y1 inside func1 ", y1);
 
         {
-            let z1=25;
+            let z1 = 25;
             console.log("z1 inside func1 and inside its block ", z1);
         }
-         console.log("z1 inside func1 and outside its block ", z1);
+        // console.log("z1 inside func1 and outside its block ", z1); // ERROR
 
     }
 
-    
+     x1 = 100;
 
     func1();
     // console.log("y outside func1 ", y); // ERROR
