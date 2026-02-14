@@ -1,0 +1,35 @@
+<script>
+
+
+    let student1 = {
+        name: "Jonas",
+        age: 35,
+        email: "Jonas@example.com",
+        "card_no": 23256735267
+    };
+
+    function greeting1(nm, ag) {
+        console.log("<greeting1> Hello " + nm + " .You are of " + ag + " years old.");
+    }
+
+    greeting1(student1.name, student1.age,);
+
+    function greeting2({ name, age }) {
+        console.log("<greeting2> Hello " + name + " .You are of " + age + " years old.");
+        //console.log("card - ", stud.card_no);
+    }
+
+    greeting2(student1);
+
+
+    function greeting3(stud) {
+        console.log("<greeting2> Hello " + stud.name + " .You are of " + stud.age + " years old.");
+        console.log("card - ", stud.card_no);
+    }
+
+    greeting3(student1);
+
+</script>
+
+// Prefer the greeting2 approach of writing functions as the function here has access to only name and age and 
+// nothing else from the object passed it. 
