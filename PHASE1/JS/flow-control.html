@@ -10,16 +10,94 @@
 
     if (a > 15)
         console.log("A is greater than 15!");
+    else if (a > 16)
+        console.log("A is greater than 16!");
     else
         console.log("A is less than 15!");
 
 </script>
 
 <script>
-    // for loop demo
+    // Switch demo
+    let x5 = 15; // 17;
 
-    for( let x = 5 ; x<10 ; x++){
+    switch (x5) {
+
+        case 10:
+            console.log("Hi 10");
+            break;
+        case 15:
+            {
+                console.log("Hi-1 15");
+                console.log("Hi-2 15");
+                break;
+            };
+        case 20:
+            console.log("Hi 20");
+            break;
+        case 25:
+            console.log("Hi 25");
+            break;
+        default:
+            console.log("Hi this is default block");
+    }
+
+</script>
+
+<script>
+    // for loop demo
+    console.log("\n for loop demo")
+    for (let x = 5; x < 10; x = x + 2) {
         console.log("x is ", x);
     }
+
+</script>
+
+<script>
+    // while loop demo
+    console.log("\n while loop demo")
+    let y10 = 10;
+
+    while (y10 < 10) {
+        console.log("y10 is ", y10);
+        y10 = y10 + 3;
+    }
+
+    // do while loop
+    console.log("\n do - while loop demo")
+    let z10 = 10;
+    do {
+        console.log("z10 is ", z10);
+        z10 = z10 + 3;
+    } while (z10 < 10)
+
+</script>
+
+<script>
+    // break and continue 
+
+    console.log("\n for loop with break demo")
+    for (let x = 5; x < 10; x = x + 1) {
+        console.log("1-x is ", x);
+
+        if (x === 8)
+            break;
+
+        console.log("2-x is ", x);
+    }
+
+
+    console.log("\n\n for loop with continue demo")
+    for (let x = 5; x < 10; x = x + 1) {
+        console.log("1-x is ", x);
+
+        if (x === 8)
+            continue;
+
+        console.log("2-x is ", x);
+    }
+
+ // Task- create a while loop that iterates from x=5 to x=15 and prints only even numbers on the console.
+ // DO NOT USE IF/ELSE
 
 </script>
