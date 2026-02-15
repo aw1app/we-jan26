@@ -6,4 +6,12 @@ TASK-2 : create a css class that applies background image to a table data elemen
 
 TASK-3: There are  2 li elements. One has attr1=val1 and another attr1=val2
 as thier attributes.
-Only the li element with  attr1=val2 should be in grey background  
+Only the li element with  attr1=val2 should be in grey background
+
+
+CLASSES:
+TASK-10: 
+Create an Employee class with name,designation and salary properties.
+Let's it also have methods - computeTax(rate)
+Then also create a function that will compare 2 employees's salary and print the Employee name who had higher salary.
+
