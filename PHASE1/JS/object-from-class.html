@@ -1,0 +1,85 @@
+<script>
+
+    class Student {
+
+        constructor(name, age, cn) {
+            this.name = name;
+            this.age = age;
+            this.card_no = cn;
+        }
+
+        // actions (methods/ functions)
+        study(subject, no_of_hours) {
+            //console.log("INSIDE STUDY method ", this.name + " is going to study " + subject + " for " + no_of_hours + " hours");
+            console.log(`INSIDE STUDY method  ${this.name}  is going to study ${subject}  for  ${no_of_hours}  hours`);
+
+        }
+
+    };
+   
+    /// create some 2 students  
+
+    let student1 = new Student("Rohan", 25, "1111");
+
+    console.log("student1", student1);
+
+    console.log("student1's name", student1.name);
+    student1.study("Maths", 6);
+
+
+    let student2 = new Student("Madana", 44, "2222");
+
+    console.log("student2", student2);
+
+    console.log("student2's name", student2.name);
+
+</script>
+
+<script>
+    function greeting2({ name, age }) {
+        console.log("<greeting2> Hello " + name + " .You are of " + age + " years old.");
+    }
+
+    greeting2(student1);
+
+
+    function greeting3(stud) {
+        console.log("<greeting2> Hello " + stud.name + " .You are of " + stud.age + " years old.");
+        console.log("INSIDE greeting3 card - ", stud.card_no);
+        stud.study("History",4);
+        stud.card_no = "0000";
+    }
+
+    console.log(" before  greeting3 student1 card no : " + student1.card_no);
+    greeting3(student1);
+    console.log("after calling  greeting3 student1 card no : " + student1.card_no);
+
+</script>
+
+
+<script>
+    function greeting1({ name, age }) {
+        //ONLY GETTER
+        console.log(`Name: ${name}, Age: ${age}`);
+        name = "DEVIL";
+        console.log(`Name: ${name}, Age: ${age}`); // DEVIL
+    }
+    greeting1(student1);
+
+    function greeting2(student) {
+        //SETTER & GETTER
+        student.age = 68; //Object Update
+        console.log(`Name: ${student.name}, Age: ${student.age}`);
+        student.name = "DEVIL";
+    }
+    greeting2(student1);
+
+    console.log(`Student1 - ${JSON.stringify(student1)}`);
+    function greeting3({ ...student }) {
+        //SETTER to Local & GETTER
+        student.age = 70; //Local update
+        console.log(`Name: ${student.name}, Age: ${student.age}`);
+    }
+    greeting3(student1);
+    console.log(`Student1 - ${JSON.stringify(student1)}`);
+</script>

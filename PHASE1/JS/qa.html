@@ -1,0 +1,32 @@
+<script>
+
+    class Student {
+        constructor(name, age, card) {
+            this.name = name;
+            this.age = age;
+            this.card = card;
+        }
+        //Actions/Methods/Functions
+        study(subject, no_of_hrs) {
+            console.log(
+                `Name - ${this.name} is going to study ${subject} for ${no_of_hrs} hours`,
+            );
+        }
+    }
+    //Creating object from class
+    let student1 = new Student("Rohan", 28, "123456789");
+
+    console.log(`Student1 - ${JSON.stringify(student1)}`);
+
+    student1.study("Maths", 6);
+    
+    //Creating Object using Object destructuring
+    let student2 = {
+        ...student1,
+        name: "Ajay",
+        age: 90,
+    };
+    console.log(`Student2 - ${JSON.stringify(student2)}`);
+    //student2.study("English", 8); --> TypeError: student2.study is not a function
+
+</script>

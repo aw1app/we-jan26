@@ -1,0 +1,24 @@
+<script>
+
+    function f1(x,y) {
+        console.log("INSIDE f1 " + x + " " + y);
+
+        return function sayHello(a,b) {
+            console.log("INSIDE sayHello. Hello to you! " + a + " " + b);
+            console.log("INSIDE sayHello. " + x + " " + y);
+        };
+
+    }
+
+
+    let x1 = f1(2,3);
+
+    // console.log(x1);
+    x1(12,13);
+
+     x1(100,200);
+
+</script>
+
+
+CLOSURE FUNCTION

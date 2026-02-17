@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<script>
+
+    function f0(str) {
+        console.log(`I got this text ${str} and I will convert it into half of that value`);
+    }
+
+    function f1(str) {
+        console.log(`I got this text ${str} and I will convert it into double that value`);
+    }
+
+    // f2 accepts a string data and a function f
+    // It then invokes that function f on the string data passed to it.
+    function f2(name, str1, func1, func2) {
+        console.log(`I got this text ${str1}`);
+        console.log(`I will give this text ${str1} to either ${func1} or ${func2} `);
+
+        if (name === "Musk")
+            func1(str1);
+        else
+            func2(str1);
+
+    }
+
+    //f2("Sundar", "One million dollars ", f0, f1);
+
+</script>
+
+<script>
+
+    function greetInFrench(name) {
+        console.log(`Bonjour ${name}`);
+    }
+
+    function greetInEnglish(name) {
+        console.log(`Hello ${name}`);
+    }
+
+    function greet(name, lang, g1, g2) {
+        if (lang === "English")
+            g1(name);
+        else
+            g2(name);
+    };
+
+    function formProcess(){
+
+       //console.log("Inside formProcess");
+       let name =document.form1.name.value;
+       let lang =document.form1.lang.value;
+
+       greet(name, lang, greetInEnglish, greetInFrench);
+    };
+
+    
+
+</script>
+
+<form name="form1">
+    What's your name: <input name="name"><br>
+    What do you speak?: <input name="lang"><br>
+    <button onClick="formProcess(); return false"> Greet me</button>
+</form>

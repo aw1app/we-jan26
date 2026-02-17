@@ -1,0 +1,27 @@
+<script>
+
+
+    class Employee {
+        constructor(name, designation, salary) {
+            this.name = name;
+            this.designation = designation;
+            this.salary = salary;
+        }
+
+        computeTax(rate) {
+            return this.salary * (1 + rate / 100);
+        }
+
+        compareSalary({ ...emp2 }) {
+            let nameOfHigherSalaryEmployee = this.salary >= emp2.salary ? this.name : emp2.name;
+            console.log(`Greater Salary Employee- ${nameOfHigherSalaryEmployee}`);
+        }
+
+    }
+
+    let employee1 = new Employee("Sundar", 51, 1000000);
+    let employee2 = new Employee("Musk", 57, 21000000);
+
+    employee1.compareSalary(employee2);
+
+</script>

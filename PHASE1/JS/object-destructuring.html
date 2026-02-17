@@ -1,0 +1,90 @@
+<script>
+
+
+    let student1 = {
+        name: "Jonas",
+        age: 35,
+        email: "Jonas@example.com",
+        "card_no": 23256735267
+    };
+
+    function greeting1(nm, ag) {
+        console.log("<greeting1> Hello " + nm + " .You are of " + ag + " years old.");
+    }
+
+    greeting1(student1.name, student1.age,);
+
+    function greeting2({ name, age }) {
+        console.log("<greeting2> Hello " + name + " .You are of " + age + " years old.");
+        //console.log("card - ", stud.card_no);
+    }
+
+    greeting2(student1);
+
+
+</script> function greeting3(stud) {
+console.log("<greeting2> Hello " + stud.name + " .You are of " + stud.age + " years old.");
+    console.log("card - ", stud.card_no);
+    }
+
+    greeting3(student1);
+
+    </script>
+
+    <script>
+        // Prefer the greeting2 approach of writing functions as the function here has access to only name and age and
+        // nothing else from the object passed it.
+
+        // TASK-4: Create a function that accepts age of a Student and returns his/her eligibility to vote
+        // voting age is 18 years.
+        //SOLUTION-1
+
+        function checkVotingEligibility1(age) {
+            if (age >= 18) {
+                return "Eligible to vote";
+            } else {
+                return "Not eligible to vote";
+            }
+        }
+
+        //SOLUTION-2
+        function checkVotingEligibility2({ age }) {
+            if (typeof age !== "number" || age < 0) {
+                return "Invalid age";
+            }
+            return age >= 18
+                ? "Eligible to vote"
+                : "Not eligible to vote";
+        }
+    </script>
+
+
+    <script>
+        console.log("Object updation/copying the properties of an existing into a new one");
+        // updating object properties.
+        /*
+        let student1 = {
+        name: "Jonas",
+        age: 35,f
+        email: "Jonas@example.com",
+        "card_no": 23256735267
+    };
+    */
+
+        console.log("student1", student1);
+
+        let student2 = {
+            ...student1
+        }
+
+        console.log("student2", student2);
+
+
+        let student3 = {
+            ...student1,
+            name:"Gavin",
+            age:45
+        }
+
+        console.log("student3", student3);
+    </script>

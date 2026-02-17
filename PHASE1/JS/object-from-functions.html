@@ -1,0 +1,53 @@
+<script>
+
+    function Student(name, age, cn) {
+
+        this.name = name;
+        this.age = age;
+        this.card_no=cn;
+
+        //actions
+        this.study = function () {
+            console.log( "I am studying... ");
+        }
+
+    };
+
+
+    /// create some 2 students
+
+    let student1 = new Student("Rohan", 25, "1111");
+
+    console.log("student1", student1);
+
+    console.log("student1's name", student1.name);
+    student1.study();
+
+
+    let student2 = new Student("Madana", 44,  "2222");
+
+    console.log("student2", student2);
+
+    console.log("student2's name", student2.name);
+
+</script>
+
+<script>
+    function greeting2({ name, age }) {
+        console.log("<greeting2> Hello " + name + " .You are of " + age + " years old.");
+    }
+
+    greeting2(student1);
+
+
+    function greeting3(stud) {
+        console.log("<greeting2> Hello " + stud.name + " .You are of " + stud.age + " years old.");
+        console.log("INSIDE greeting3 card - ", stud.card_no);
+        stud.card_no="0000";
+    }
+
+    console.log(" before  greeting3 student1 card no : " + student1.card_no);
+    greeting3(student1);
+    console.log("after calling  greeting3 student1 card no : " + student1.card_no);
+
+</script>

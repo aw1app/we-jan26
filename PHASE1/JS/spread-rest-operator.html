@@ -1,0 +1,72 @@
+<script>
+    console.log("\n SPREAD operator demo");
+
+    let arr1 = [4, 5, 6, 7, 8];
+
+    function add(x, y, z) {
+        return x + y + z;
+    }
+
+    let result1 = add(arr1[0], arr1[1]);
+    console.log("result1 =", result1);
+
+    let result2 = add(...arr1);
+    console.log("result2 =", result2);
+</script>
+
+<script>
+    console.log("\n REST operator demo");
+
+    let [a, b, ...arr2] = arr1;
+
+    /*
+    let arr2 = [];
+    for (i = 0; i < arr1.length; i++) {
+        
+        if (i < 2) continue;
+        arr2[i-2] = arr1[i];
+
+    }
+        */
+
+    console.log("a =", a);
+    console.log("b =", b);
+    console.log("arr2 =", arr2);
+</script>
+<script>
+    // TASK-2: Merge two arrays
+    const mathStudents = ["Amit", "Ravi"];
+    const scienceStudents = ["Neha", "Priya"];
+
+    //SOLUTION
+    let allstudents = [...mathStudents, ...scienceStudents];
+    console.log("allstudents", allstudents);
+</script>
+
+<script>
+    // TASK-3
+    // Write a function:
+    //    function totalMarks(...)
+    // that accepts any number of marks and returns their sum.
+
+    //SOLUTION:
+    function totalmarks(...marks) {
+        let totalmarks = 0;
+        marks.forEach((mark) => {
+            totalmarks += mark;
+        });
+        return totalmarks;
+    };
+
+     console.log("totalmarks", totalmarks(...[1, 2, 3]));
+
+    function totalmarks2(marks) {
+        let totalmarks = 0;
+        marks.forEach((mark) => {
+            totalmarks += mark;
+        });
+        return totalmarks;
+    }
+
+    console.log("totalmarks2", totalmarks2([1, 2, 3]));
+</script>
