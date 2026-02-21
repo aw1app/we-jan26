@@ -1,0 +1,44 @@
+<script>
+   // call demo 
+    const person1 = {
+        name: "Alice",
+    };
+
+    const person2 = {
+        name: "Bob"
+    };
+
+    function greeting( salutation, message ) {
+        console.log(salutation + "  " + this.name +   " " + message);
+    }
+
+    //greeting.call(person1, "Hi", "How are you !");
+    //greeting.call(person2, "Hello", "Howdy how are you !");
+
+    // greeting(person1);
+
+</script>
+
+<script>
+// apply demo 
+console.log("\n apply demo");
+greeting.apply(person1, [  "Hi", "How are you !"]);
+greeting.apply(person2, [  "Hello", "Howdy are you !"]);
+
+</script>
+
+
+<script>
+// bind demo 
+const person3 = {
+  name: "Charlie"
+};
+console.log("\n bind demo");
+
+let f1 = greeting.bind(person3);
+
+f1("Hi", "How are you !"); // Hi Charlie  How are you !
+
+f1("Hi", "Have you Applied for Scholarship?");
+
+</script>

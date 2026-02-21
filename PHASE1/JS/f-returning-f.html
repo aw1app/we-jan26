@@ -1,9 +1,9 @@
 <script>
 
-    function f1(x,y) {
+    function f1(x, y) {
         console.log("INSIDE f1 " + x + " " + y);
 
-        return function sayHello(a,b) {
+        return function g1(a, b) {
             console.log("INSIDE sayHello. Hello to you! " + a + " " + b);
             console.log("INSIDE sayHello. " + x + " " + y);
         };
@@ -11,14 +11,46 @@
     }
 
 
-    let x1 = f1(2,3);
+    let x1 = f1(2, 3);   // x1 = sayhello
 
     // console.log(x1);
-    x1(12,13);
+    x1(12, 13);
 
-     x1(100,200);
+    x1(100, 200);
 
 </script>
 
 
 CLOSURE FUNCTION
+
+<script>
+    // IIFE (Immediately Invoked Function Expression ) functions
+    // - are only invokable once
+    // they are not reusable functions 
+
+    let y1 = (
+        function g1(x) {
+            console.log("Hi I am g1 function " + x);
+
+            return function hiHello() { console.log("Hi I am g1 function hiHello "); }
+        }
+    )(5);
+
+    // g1(); //  ERROR because g1 is an IIFE and it has already been invoked
+
+    y1();
+
+
+    let y2 = (
+        function g2(x) {
+            console.log("Hi I am g1 function " + x);
+
+            return x + 10;
+        }
+    )(5);
+
+    // g2(); //  ERROR because g2 is an IIFE and it has already been invoked where it was defined
+
+    y2(); // 15
+
+</script>

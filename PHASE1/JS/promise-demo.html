@@ -1,0 +1,47 @@
+<script>
+
+    function add(a, b) {
+
+        for (let i = 0; i < 10000000000; i++) { };
+
+        //console.log("Inside add function " + (a + b));
+        return a + b;
+    };
+
+    //console.log("STATEMENT1");
+    //console.log("STATEMENT2");
+    //console.log(`STATEMENT 3  ${add(2, 5)}`);
+    //console.log("STATEMENT4");
+    //console.log("STATEMENT5");
+
+</script>
+
+<script>
+    // promise demo
+
+    let myPromise = new Promise(
+
+        (f1, f2) => {
+            // do some long running task here
+            // when the task is finished successfully f1 will be called and it will recieve the result
+            // if the task failed f2 will be called and it will recieve the error object
+            success = false; // simulated failure
+
+            let res1 = add(2, 5);
+
+            if (success)
+                f1(res1);
+            else
+                f2(new Error("Could not add 2 and 5"));
+        }
+    );
+
+    console.log("STATEMENT1");
+    console.log("STATEMENT2");
+    myPromise
+    .then ( res1 => console.log ("STATEMENT3 " + res1) )
+    .catch( err => console.log (err));
+    console.log("STATEMENT4");
+    console.log("STATEMENT5");
+
+</script>
