@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { HttpClient } from '@angular/common/http';
 
@@ -31,6 +31,15 @@ export class ProductServiceV2 {
 
   getProducts(): Observable<Product[]> {
     return this.products$;
+  }
+
+  getProduct(id: number): Observable<Product | undefined> {
+
+   let prod :  Observable<Product | undefined>  = this.products$.pipe(
+      map(products => products.find(p => Number(p.id) === id))
+    );
+
+    return prod;
   }
 
 

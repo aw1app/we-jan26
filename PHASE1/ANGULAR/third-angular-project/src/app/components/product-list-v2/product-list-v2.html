@@ -1,11 +1,14 @@
- <ng-container *ngIf="products$ | async as products">
+<div style="border:solid 2px rgb(245, 35, 186)">
+    <h2>Product List V2</h2>
+    <ng-container *ngIf="products$ | async as products">
 
 
-    <table border="1">
-        <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-        </tr>
-    </table>
+        <table border="1">
+            <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </table>
 
     </ng-container>
+</div>
