@@ -2,7 +2,33 @@
 
 <product-list-v2 />
 
-<product-v2 [id]="1"/>
+<product-v2 [id]="0" />
+<product-v2 [id]="5" />
+
+<!-- ngSwitch Demo -->
+<h2>Angular ngSwitch Demo</h2>
+
+<div [ngSwitch]="status">
+
+    <p *ngSwitchCase="'pending'">
+        ⏳ Order is pending
+    </p>
+
+    <p *ngSwitchCase="'approved'">
+        ✅ Order approved
+    </p>
+
+    <p *ngSwitchCase="'rejected'">
+        ❌ Order rejected
+    </p>
+
+    <p *ngSwitchDefault>
+        Unknown status
+    </p>
+
+</div>
+
+<!-- ngSwitch Demo -->
 
 <!-- <product [id]="0" /> -->
 

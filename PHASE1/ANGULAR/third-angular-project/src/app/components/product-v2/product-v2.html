@@ -1,9 +1,13 @@
 <div style="border:solid 2px rgb(36, 67, 222)">
-    <h2>Product  V2</h2>
-    
-    <div *ngIf="product$ | async as product">
+    <h2>Product V2</h2>
 
-                {{product.name}}, {{product.price}}
+    <div *ngIf="product$ | async as product ; else productNotFound">
+
+        {{product.name}}, {{product.price}}        
 
     </div>
+
+    <ng-template #productNotFound>  Product with id= {{ id}} not found  </ng-template>
+
+
 </div>
