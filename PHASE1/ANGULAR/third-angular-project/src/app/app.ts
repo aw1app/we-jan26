@@ -7,11 +7,12 @@ import { ProductListV2 } from './components/product-list-v2/product-list-v2';
 import { ProductComponentV2 } from './components/product-v2/product-v2';
 import { CommonModule } from '@angular/common';
 import { Highlight } from './directives/highlight';
+import { PipesDemoComponent } from './components/pipes-demo/pipes-demo';
 
 @Component({
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet, ProductListComponent, ProductComponent,AddProductComponent,
-     ProductListV2, ProductComponentV2, Highlight],
+     ProductListV2, ProductComponentV2, Highlight, PipesDemoComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

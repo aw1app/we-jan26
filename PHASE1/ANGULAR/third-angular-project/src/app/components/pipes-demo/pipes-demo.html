@@ -1,0 +1,34 @@
+<div style="border:solid 2px rgb(58, 209, 233)">
+    <h2>Angular Built-in Pipes Demo</h2>
+
+    <p>Original Name : {{name}}</p>
+    <p>Uppercase : {{ name | uppercase }}</p>
+    <p>Lowercase: {{name | lowercase}}</p>
+    <p>Titlecase: {{name | titlecase}}</p>
+
+    <hr>
+
+    <p>Today: {{today}}</p>
+    <p>Date Pipe: {{today | date}}</p>
+    <p>Short Date: {{today | date:'shortDate'}}</p>
+    <p>Full Date: {{today | date:'fullDate'}}</p>
+
+    <hr>
+
+    <p>Price: {{price}}</p>
+    <p>Currency (INR): {{price | currency:'INR'}}</p>
+    <p>Currency (USD): {{price | currency:'USD'}}</p>
+
+    <hr>
+
+    <p>Percent: {{percentValue}}</p>
+    <p>Percent Pipe: {{percentValue | percent}}</p>
+
+    <hr>
+
+    <p>Slice Pipe: {{message | slice:0:7}}</p>
+
+    <hr>
+    <p>JSON Pipe: {{user1 |json}}</p>
+
+</div>
