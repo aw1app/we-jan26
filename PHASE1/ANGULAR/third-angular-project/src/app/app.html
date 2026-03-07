@@ -30,6 +30,19 @@
 
 <!-- ngSwitch Demo -->
 
+<!-- ngClass Demo -->
+<h2> ngClass attribute directive demo</h2>
+<p [ngClass]="{'text-border':true}"> This is a para which has text-border css class is set to true</p>
+<p [ngClass]="{'text-border':false}"> This is a para which has text-border css class is set to false</p>
+
+<!-- ngClass Demo -->
+
+<!-- ngStyle Demo -->
+<h2> ngClass attribute directive demo</h2>
+<p [ngStyle]="{'color': isImportant ? 'blue' : 'grey'}"> This is a important para where isImportant is evaluated true and therefore it appears in blue </p>
+<p [ngStyle]="{'color': !isImportant ? 'blue' : 'grey' }"> This is a important para where !isImportant is evaluated false and therefore it appears in blue</p>
+<!-- ngStyle Demo -->
+
 <!-- <product [id]="0" /> -->
 
 <!-- <add-product />

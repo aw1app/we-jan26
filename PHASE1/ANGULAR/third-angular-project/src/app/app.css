@@ -1,0 +1,5 @@
+.text-border {
+    color: black;
+    border: 1px solid blue;
+    background-color: rgb(191, 232, 137);
+}
