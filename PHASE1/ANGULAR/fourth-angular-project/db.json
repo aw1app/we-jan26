@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "name": "Dell Monitor",
+            "price": 10000,
+            "description": "",
+            "inStock": true,
+            "imagePath": "",
+            "bidAmount": 1000
+        },
+        {
+            "id": 1,
+            "name": "HP Monitor",
+            "price": 10400,
+            "description": "good monitor ",
+            "inStock": true,
+            "imagePath": "",
+            "bidAmount": 1000
+        }
+    ],
+    "users":[
+        
+    ]
+}
