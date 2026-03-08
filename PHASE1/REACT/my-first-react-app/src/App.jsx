@@ -10,10 +10,10 @@ function App() {
   return (
     <>
      <h1> Welcome to E Store</h1>
-     <Product name="Dell Monitor" price="20000" />
-     <Product />
-     <Product />
-     <Product />
+     <Product name="Dell Monitor" price="2000" />
+    <Product name="HP Monitor" price="2040" />
+    <Product name="Samsung Phone" price="6000" />
+    <Product name="IPad" price="2600" />
     </>
   )
 }
