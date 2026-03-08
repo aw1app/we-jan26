@@ -10,6 +10,9 @@ function App() {
   return (
     <>
      <h1> Welcome to E Store</h1>
+     <Product name="Dell Monitor" price="20000" />
+     <Product />
+     <Product />
      <Product />
     </>
   )

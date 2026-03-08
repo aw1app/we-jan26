@@ -1,13 +1,14 @@
 
 
-function Product() {
+function Product(props) {
     let name = "HP Monitor";
     let price = 50000;
 
     // returning JSX
     return (
         <div>
-            Name : {name}, Price : {price}
+          
+            Name : {props.name}, Price : {props.price}
         </div>
     )
 }
