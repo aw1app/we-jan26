@@ -4,11 +4,18 @@
 
 
         <table border="1">
-            <tr *ngFor="let product of products; index as i">
-                 <td>{{ i+1 }}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
+            <tr>
+                <th>SL NO </th>
+                <th>NAME </th>
+                <th>DETAILS</th>
             </tr>
+
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{product.name}}</td>
+                <td><a href="/product/{{product.id}}"> DETAILS </a></td>
+            </tr>
+            
         </table>
 
     </ng-container>

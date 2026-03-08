@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 import { ProductServiceV2 } from '../../services/product-v2';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'product-v2',
@@ -13,13 +14,16 @@ import { CommonModule } from '@angular/common';
 export class ProductComponentV2 {
 
   product$!: Observable<Product | undefined>;
-  @Input("id") id!: number;
+  id!: number;
 
-  constructor(private productService: ProductServiceV2) {
+  constructor(private route: ActivatedRoute, private productService: ProductServiceV2) {
   }
 
   ngOnInit(): void {
     this.productService.loadProducts();
+
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.product$ = this.productService.getProduct(this.id);
   }
 
