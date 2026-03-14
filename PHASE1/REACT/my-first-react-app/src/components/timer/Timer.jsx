@@ -30,13 +30,32 @@ class Timer extends Component {
 
     }
 
+    // TASK-3 (Challenge) : Enhance the Timer component to stop after 15 secs.
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("In Timerc shouldComponentUpdate() LC method ");
+
+        // don't render beyond 15 secs
+        if (nextState.seconds > 15) {
+            clearInterval(this.interval);
+            return false; // false means don't invoke method.
+        }
+        else return true;
+
+    }
+
+    // when the component goes out of sight, this LC will get called.
+    componentWillUnmount() {
+         console.log("In Timerc componentWillUnmount() LC method ");
+        //clearInterval(this.interval);
+    }
+
 
     render() {
 
         console.log("In Timerc render() LC method ")
 
         return (
-            <div style={{ border: "1px solid blue", padding: "10px" }}>
+            <div style={{ border: "1px solid green", padding: "4px", margin: "10px" }}>
                 <h3>Timer</h3>
                 Seconds: {this.state.seconds}
             </div>
