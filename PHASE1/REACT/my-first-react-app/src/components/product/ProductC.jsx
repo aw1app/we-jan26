@@ -6,14 +6,14 @@ class ProductC extends Component {
     constructor(props) {
         super(props);
 
-         // this.state.name = props.name;
+        // this.state.name = props.name;
         // this.state.price = Number(props.price);
 
         this.state = {
             name: props.name,
             price: Number(props.price)
         };
-       
+
         this.changePrice = this.changePrice.bind(this);
     }
 
@@ -22,9 +22,13 @@ class ProductC extends Component {
         console.log("inside changePrice() of Product C");
         console.log("before updating by 1000 this.price=", this.state.price);
 
-        // this.state.price = this.state.price + 1000;
+        // this.state.price = this.state.price + 1000; // directly changing state's data won't work in React. 
+        // use the below appraoch to change data in state.
         this.setState(
-             { ...this.state, price: this.state.price + 1000 }
+            {
+                ...this.state,
+                price: this.state.price + 1000
+            }
         );
 
         console.log("after 1000 this.price=", this.state.price);
@@ -37,7 +41,6 @@ class ProductC extends Component {
         return (
 
             <div style={{ "border": "solid 1px red" }}>
-               
 
                 Name : {this.props.name}, Price: INR {this.state.price}
 
