@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ProductF from './components/product/ProductF'
 import ProductC from './components/product/ProductC'

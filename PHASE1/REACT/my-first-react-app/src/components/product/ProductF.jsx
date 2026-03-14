@@ -1,6 +1,6 @@
 
 
-function ProductF(props) {
+const ProductF = (props) => {
     let conversionRate = 10;
 
     // returning JSX
