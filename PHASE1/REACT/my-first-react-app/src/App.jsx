@@ -13,6 +13,9 @@ import Products from './components/products/products'
 
 function App() {
 
+  function func1(){
+    console.log("Inside App.jsx's func1 function");
+  }
 
   return (
     <>
@@ -21,7 +24,7 @@ function App() {
 
       <Products products={productsArr} />
 
-      <ProductF name="Dell Monitor" price="2000" />
+      <ProductF name="Dell Monitor" price="2000" f1={func1}/>
       <ProductF name="HP Monitor" price="2040" />
       <ProductC name="Samsung Phone" price="6000" />
       <ProductC name="IPad" price="2600" />
