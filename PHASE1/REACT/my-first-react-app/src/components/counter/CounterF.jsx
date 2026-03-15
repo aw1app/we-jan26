@@ -7,10 +7,13 @@ const CounterF = () => {
 const [counter, setCounter ] =useState(1000); // contour is now a state variable.
 
 
-const increment= ()=> {
-    console.log("INSIDE increment of CounterF");
+const increment= ()=> {    
     //counter=counter+1; // won't work. react doesn't allow direct manipulation of state variable
     setCounter(counter+1);
+}
+
+const decrement= ()=> {  
+    setCounter( counter => counter-1);
 }
 
 
@@ -20,6 +23,7 @@ const increment= ()=> {
             Counter : {counter}
 
             <button style={{ "border":"solid 2px blue" }} onClick={increment} > INCREMENT </button>
+            <button style={{ "border":"solid 2px blue" }} onClick={decrement} > DECREMENT </button>
         </div>
 
     )
@@ -29,5 +33,6 @@ const increment= ()=> {
 
 export default CounterF;
 
+// TASK 6 - Implement a textfeild and a button click which will increase the counter value by whatever 
+// the user has typed in the textfeild
 
-// TASK5- Implemnent decrement counter functionality
