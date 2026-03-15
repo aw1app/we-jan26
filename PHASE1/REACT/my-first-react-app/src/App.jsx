@@ -17,14 +17,18 @@ function App() {
     console.log("Inside App.jsx's func1 function");
   }
 
+  function func2(data){
+    console.log("Inside App.jsx's func2 function. Got data = ", data , " from the child! ");
+  }
+
   return (
     <>
       <h1> Welcome to E Store</h1>
-      <Timer />
+      {/* <Timer /> */}
 
       <Products products={productsArr} />
 
-      <ProductF name="Dell Monitor" price="2000" f1={func1}/>
+      <ProductF name="Dell Monitor" price="2000" f1={func1} f2={func2}/>
       <ProductF name="HP Monitor" price="2040" />
       <ProductC name="Samsung Phone" price="6000" />
       <ProductC name="IPad" price="2600" />
