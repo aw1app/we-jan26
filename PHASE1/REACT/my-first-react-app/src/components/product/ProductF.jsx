@@ -3,6 +3,8 @@
 const ProductF = (props) => {
     let conversionRate = 10;
 
+    
+
     // returning JSX
     return (
         <div style={{"border":"solid 1px blue"}}>

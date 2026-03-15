@@ -3,6 +3,7 @@ import ProductF from './components/product/ProductF'
 import ProductC from './components/product/ProductC'
 import Timer from './components/timer/Timer'
 import Products from './components/products/products'
+import CounterF from './components/counter/CounterF'
 
 
  const productsArr = [
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <h1> Welcome to E Store</h1>
+      <CounterF />
       {/* <Timer /> */}
 
       <Products products={productsArr} />
