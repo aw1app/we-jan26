@@ -24,5 +24,6 @@ const Products = (props) => {
 
 }
 
-
 export default Products;
+
+// TASK-7 : Enhance Product componet so that it display product details using the ProductContext
