@@ -2,7 +2,7 @@ import './App.css'
 import ProductF from './components/product/ProductF'
 import ProductC from './components/product/ProductC'
 import Timer from './components/timer/Timer'
-import Products from './components/products/products'
+import ProductList from './components/products/ProductList'
 import CounterF from './components/counter/CounterF'
 
 
@@ -28,7 +28,7 @@ function App() {
       <CounterF />
       {/* <Timer /> */}
 
-      <Products products={productsArr} />
+      <ProductList items={productsArr} />
 
       <ProductF name="Dell Monitor" price="2000" f1={func1} f2={func2}/>
       <ProductF name="HP Monitor" price="2040" />

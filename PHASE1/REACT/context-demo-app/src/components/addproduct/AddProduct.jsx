@@ -5,11 +5,11 @@ const AddProduct = () => {
 
     const { addProduct } = useContext(ProductContext);
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState("Dell Monitor");
     const [price, setPrice] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // prevent submiiting to backend webserver
 
         addProduct(name, Number(price));
 
@@ -20,27 +20,19 @@ const AddProduct = () => {
     return (
         <div style={{ border: "1px solid green", padding: "10px" }}>
 
-            <h3>Add Product</h3>
+            <h3>Add Product Form </h3>
 
             <form onSubmit={handleSubmit}>
 
-                <input
-                    type="text"
-                    placeholder="Product Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+                <input  value={name}  onChange={(e) => setName(e.target.value)}  />
 
-                <input
-                    type="number"
-                    placeholder="Price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                />
+                <input type="number"  value={price}   onChange={(e) => setPrice(e.target.value)}     />
 
                 <button type="submit">Add</button>
 
             </form>
+
+            Name: {name}, Price {price}
 
         </div>
     );

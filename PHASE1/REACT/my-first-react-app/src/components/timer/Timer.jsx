@@ -26,7 +26,7 @@ class Timer extends Component {
                         seconds: prevState.seconds + 1
                     }));
             },
-            1000);
+            1000); // every 1000 ms = 1 sec
 
     }
 
@@ -37,9 +37,9 @@ class Timer extends Component {
         // don't render beyond 15 secs
         if (nextState.seconds > 15) {
             clearInterval(this.interval);
-            return false; // false means don't invoke method.
+            return false; // false means don't invoke render method.
         }
-        else return true;
+        else return true; // call render method
 
     }
 

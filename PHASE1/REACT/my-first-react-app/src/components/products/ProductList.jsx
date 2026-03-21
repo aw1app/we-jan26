@@ -1,14 +1,14 @@
 import { Component } from "react";
 import ProductC from "../product/ProductC";
 
-class Products extends Component {
+class ProductList extends Component {
 
 
     constructor(props) {
         super(props);
 
         this.state = {
-            products: props.products
+            products: props.items
         }
     }
 
@@ -18,11 +18,11 @@ class Products extends Component {
 
         return (
               <div style={{ border: "2px double yellow", padding: "4px", margin: "10px" }}>
-                <h3>Products List </h3>
+                <h3>Products List from Products comp</h3>
 
                 {
                     this.state.products.map(
-                        product => (<ProductC name={product.name} price={product.price} />)
+                        (product,index) => (<ProductC id={index} name={product.name} price={product.price} />)
                     )
                 }
 
@@ -34,4 +34,4 @@ class Products extends Component {
 }
 
 
-export default Products;
+export default ProductList;
