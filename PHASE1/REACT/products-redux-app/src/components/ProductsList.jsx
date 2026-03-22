@@ -17,23 +17,24 @@ function ProductsList() {
     );
 
 
-    if (loading) return <h3>Loading...</h3>;
-
-    if (error) return <h3>Error: {error}</h3>;
+    if (loading) return <p className="status">Loading products...</p>;
+    if (error) return <p className="error">Error: {error}</p>;
 
 
     return (
-        <>
-            <h2>Product List</h2>
+        <div className="container">
+            <h2>Products</h2>
 
-            {
-            items.map((p) => (
-                <div key={p.id} style={{ border: '1px solid gray', margin: '2px', padding: '1px' }}>
-                    <h4>{p.name}, Price: {p.price}</h4>
-                </div>
-            ))}
-
-        </>
+            <div className="products-grid">
+                {items.map((p) => (
+                    <div key={p.id} className="product-card">
+                        <h3>{p.name}</h3>
+                        <p className="price">₹ {p.price}</p>
+                        <p className="desc">{p.description || "No description"}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 
 

@@ -27,20 +27,27 @@ function AddProduct() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h3>Add Product</h3>
-            <input
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
-            <input
-                placeholder="Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-            />
-            <button type="submit">Add</button>
-        </form>
+        <div className="container">
+            <div className="card">
+                <h2>Add Product</h2>
+
+                <form onSubmit={handleSubmit} className="form">
+                    <input
+                        placeholder="Product Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+
+                    <input
+                        placeholder="Price"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                    />
+
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+        </div>
     );
 }
 

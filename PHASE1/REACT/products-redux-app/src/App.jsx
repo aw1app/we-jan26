@@ -8,19 +8,20 @@ function App() {
 
   return (
     <>
-      {/* Navigation */}
-      <nav>
-        <Link to="/">Products</Link> |{" "}
-        <Link to="/add">Add Product</Link>
-      </nav>
-      <hr />
+      <div className="container">
+        <nav className="navbar">
+          <h2>Products App</h2>
+          <div>
+            <Link to="/">Products</Link>
+            <Link to="/add">Add Product</Link>
+          </div>
+        </nav>
 
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<ProductsList />} />
-        <Route path="/add" element={<AddProduct />} />
-      </Routes>
-
+        <Routes>
+          <Route path="/" element={<ProductsList />} />
+          <Route path="/add" element={<AddProduct />} />
+        </Routes>
+      </div>
     </>
   )
 }
