@@ -47,6 +47,14 @@
       "description": "",
       "inStock": true,
       "imagePath": ""
+    },
+    {
+      "id": "82dc",
+      "name": "iPad",
+      "price": "100",
+      "description": "",
+      "inStock": true,
+      "imagePath": ""
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
