@@ -1,44 +1,53 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "name": "HP Laptop",
-            "price": 100000,
-            "description": "HP Gaming Laptop",
-            "inStock": true,
-            "imagePath": "images/111.png"
-        },
-        {
-            "id": "0",
-            "name": "Nokia 3305",
-            "price": "5000",
-            "description": "",
-            "inStock": true,
-            "imagePath": "images/222.png"
-        },
-        {
-            "id": "2",
-            "name": "Nokia 2000",
-            "price": "10000",
-            "description": "",
-            "inStock": true,
-            "imagePath": "images/222.png"
-        },
-        {
-            "name": "Dell Mouse",
-            "price": "1000",
-            "description": "",
-            "inStock": true,
-            "imagePath": "",
-            "id": "NjaKRA0"
-        },
-        {
-            "id": "a8bf",
-            "name": "HP Mouse 2025",
-            "price": "100",
-            "description": "",
-            "inStock": true,
-            "imagePath": ""
-        }
-    ]
+  "products": [
+    {
+      "id": "1",
+      "name": "HP Laptop",
+      "price": 100000,
+      "description": "HP Gaming Laptop",
+      "inStock": true,
+      "imagePath": "images/111.png"
+    },
+    {
+      "id": "0",
+      "name": "Nokia 3305",
+      "price": "5000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "images/222.png"
+    },
+    {
+      "id": "2",
+      "name": "Nokia 2000",
+      "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "images/222.png"
+    },
+    {
+      "name": "Dell Mouse",
+      "price": "1000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "id": "NjaKRA0"
+    },
+    {
+      "id": "a8bf",
+      "name": "HP Mouse 2025",
+      "price": "100",
+      "description": "",
+      "inStock": true,
+      "imagePath": ""
+    },
+    {
+      "id": "c680",
+      "name": "Motorola",
+      "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": ""
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

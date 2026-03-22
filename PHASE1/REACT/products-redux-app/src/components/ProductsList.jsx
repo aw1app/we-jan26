@@ -26,10 +26,10 @@ function ProductsList() {
         <>
             <h2>Product List</h2>
 
-            {items.map((p) => (
-                <div key={p.id} style={{ border: '1px solid gray', margin: '10px', padding: '10px' }}>
-                    <h4>{p.name}</h4>
-                    <p>Price: {p.price}</p>
+            {
+            items.map((p) => (
+                <div key={p.id} style={{ border: '1px solid gray', margin: '2px', padding: '1px' }}>
+                    <h4>{p.name}, Price: {p.price}</h4>
                 </div>
             ))}
 

@@ -15,9 +15,14 @@ export const fetchProducts = createAsyncThunk(
 );
 
 
-
 //ADD PRODUCT
-
+export const addProduct = createAsyncThunk(
+    'products/addProduct',
+    async (product) => {
+        const response = await axios.post(API_URL, product);
+        return response.data;
+    }
+);
 
 
 
@@ -37,11 +42,12 @@ const productsSlice = createSlice(
             error: null,
         },
 
-        reducers: { },
+        reducers: {},
 
         extraReducers: (builder) => {
 
             builder
+                // FETCH PRODUCTS
                 .addCase(fetchProducts.pending, (state) => {
                     state.loading = true;
                 })
@@ -52,6 +58,12 @@ const productsSlice = createSlice(
                 .addCase(fetchProducts.rejected, (state, action) => {
                     state.loading = false;
                     state.error = action.error.message;
+                })
+
+                // ADD PRODUCT
+                .addCase(addProduct.fulfilled, (state, action) => {
+                    let createProduct = action.payload;
+                    state.items.push(createProduct);
                 })
 
 
