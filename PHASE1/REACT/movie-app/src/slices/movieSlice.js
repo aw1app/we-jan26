@@ -23,6 +23,24 @@ export const fetchMovies = createAsyncThunk(
     }
 );
 
+export const fetchMovieById = createAsyncThunk(
+    'movies/fetchMovieById',
+    async ({ id }) => {
+
+       
+        try {
+            const response = await axios.get(API_URL+"/"+id);
+            return response.data;
+        }
+        catch (err) {
+            console.log(err.message);
+            return rejectWithValue(err.message);
+        }
+    }
+);
+
+
+
 
 
 const moviesSlice = createSlice(
@@ -60,6 +78,20 @@ const moviesSlice = createSlice(
                     applyFilter(state)
                 })
                 .addCase(fetchMovies.rejected, (state, action) => {
+                    state.status = 'failed'
+                    state.error = action.payload
+                })
+
+                // Fetching Movie Details
+                .addCase(fetchMovieById.pending, state => {
+                    state.status = 'loading';
+                    state.error = null
+                })
+                .addCase(fetchMovieById.fulfilled, (state, action) => {
+                    state.status = 'succeeded'
+                    state.items = action.payload
+                })
+                .addCase(fetchMovieById.rejected, (state, action) => {
                     state.status = 'failed'
                     state.error = action.payload
                 })

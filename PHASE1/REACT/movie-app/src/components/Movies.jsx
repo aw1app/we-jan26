@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../slices/movieSlice";
 import SearchBar from "./SearchBar";
+import MovieCard from "./MovieCard";
 
 export default function Movies() {
 
@@ -30,9 +31,7 @@ export default function Movies() {
             <SearchBar value={query} onChange={handleSearch} />
             <div>
                 {filtered && filtered.map((m) => (
-                    <div key={m.id} >
-                        <h3>{m.title} (rating : {m.rating}) </h3>,
-                    </div>
+                    <MovieCard key={m.id} movie={m} />
                 ))}
             </div>
         </div>
