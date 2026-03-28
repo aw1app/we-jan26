@@ -7,7 +7,7 @@ export default function Movies() {
 
     const dispatch = useDispatch();
 
-    const { items, filtered, status, error, query, genre } = useSelector(state => state.movies)
+    const { filtered, status, error, query, genre } = useSelector(state => state.movies)
 
     // Initial fetch on mount
     useEffect(() => {

@@ -56,7 +56,7 @@ const moviesSlice = createSlice(
                 })
                 .addCase(fetchMovies.fulfilled, (state, action) => {
                     state.status = 'succeeded'
-                    state.filtered = action.payload
+                    state.items = action.payload
                     applyFilter(state)
                 })
                 .addCase(fetchMovies.rejected, (state, action) => {
