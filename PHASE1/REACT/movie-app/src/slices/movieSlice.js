@@ -7,9 +7,19 @@ const API_URL = 'http://localhost:3000/movies';
 
 export const fetchMovies = createAsyncThunk(
     'movies/fetchMovies',
-    async () => {
-        const response = await axios.get(API_URL);
-        return response.data;
+    async ({ query }) => {
+
+        const params = {};
+        if (query) params.title_like = query; // JSON server
+
+        try {
+            const response = await axios.get(API_URL, { params });
+            return response.data;
+        }
+        catch (err) {
+            console.log(err.message);
+            return rejectWithValue(err.message);
+        }
     }
 );
 
@@ -29,7 +39,12 @@ const moviesSlice = createSlice(
             genre: 'All',
         },
 
-        reducers: {},
+        reducers: {
+            setQuery: (state, action) => {
+                state.query = action.payload
+                applyFilter(state);
+            },
+        },
 
         extraReducers: (builder) => {
             builder
@@ -41,8 +56,8 @@ const moviesSlice = createSlice(
                 })
                 .addCase(fetchMovies.fulfilled, (state, action) => {
                     state.status = 'succeeded'
-                    state.items = action.payload
-                    // applyFilter(state)
+                    state.filtered = action.payload
+                    applyFilter(state)
                 })
                 .addCase(fetchMovies.rejected, (state, action) => {
                     state.status = 'failed'
@@ -54,5 +69,15 @@ const moviesSlice = createSlice(
 
 );
 
+// helper — runs on items in state
+function applyFilter(state) {
+    let result = state.items;
 
+    if (state.query)
+        result = result.filter(m => m.title.toLowerCase().includes(state.query.toLowerCase()))
+
+    state.filtered = result
+}
+
+export const { setQuery } = moviesSlice.actions;
 export default moviesSlice.reducer;

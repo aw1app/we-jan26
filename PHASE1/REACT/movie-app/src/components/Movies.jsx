@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../slices/movieSlice";
+import SearchBar from "./SearchBar";
 
 export default function Movies() {
 
@@ -10,10 +11,13 @@ export default function Movies() {
 
     // Initial fetch on mount
     useEffect(() => {
-        dispatch(fetchMovies())
+        dispatch(fetchMovies({ query }))
     }, [dispatch])
 
 
+    const handleSearch = (val) => {
+        dispatch(setQuery(val))
+    }
 
     if (status === 'loading') return <p className="status">Loading products...</p>;
     if (status === 'failed') return <p className="error">Error: {error}</p>;
@@ -21,12 +25,13 @@ export default function Movies() {
 
     return (
         <div className="container">
-            <h2>Movies</h2>
 
+            <h2>Movies</h2>
+            <SearchBar value={query} onChange={handleSearch} />
             <div>
-                {items.map((p) => (
-                    <div key={p.id} >
-                        <h3>{p.title}</h3>
+                {filtered && filtered.map((m) => (
+                    <div key={m.id} >
+                        <h3>{m.title} (rating : {m.rating}) </h3>,
                     </div>
                 ))}
             </div>
