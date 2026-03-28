@@ -1,44 +1,42 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../slices/movieSlice";
+import { fetchMovies, setQuery } from "../slices/movieSlice";
 import SearchBar from "./SearchBar";
 import MovieCard from "./MovieCard";
 
 export default function Movies() {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const { items, filtered, status, error, query } = useSelector(
+    (state) => state.movies
+  );
 
-    const { filtered, status, error, query, genre } = useSelector(state => state.movies)
+  useEffect(() => {
+    dispatch(fetchMovies({ query }));
+  }, [dispatch]);
 
-    // Initial fetch on mount
-    useEffect(() => {
-        dispatch(fetchMovies({ query }))
-    }, [dispatch])
+  const handleSearch = (val) => {
+    dispatch(setQuery(val));
+  };
 
+  if (status === "loading") return <p className="status">Loading movies...</p>;
+  if (status === "failed") return <p className="error">{error}</p>;
 
-    const handleSearch = (val) => {
-        dispatch(setQuery(val))
-    }
+  return (
+    <div className="container">
+      <h2>Movies</h2>
 
-    if (status === 'loading') return <p className="status">Loading products...</p>;
-    if (status === 'failed') return <p className="error">Error: {error}</p>;
+      <SearchBar value={query} onChange={handleSearch} />
 
+      <p className="results-count">
+        Showing <span>{filtered.length}</span> of {items.length} movies
+      </p>
 
-    return (
-        <div className="container">
-
-            <h2>Movies</h2>
-            <SearchBar value={query} onChange={handleSearch} />
-            <div>
-                {filtered && filtered.map((m) => (
-                    <MovieCard key={m.id} movie={m} />
-                ))}
-            </div>
-        </div>
-    );
-
-
-
-
-
+      <div className="movies-grid">
+        {filtered.map((m) => (
+          <MovieCard key={m.id} movie={m} />
+        ))}
+      </div>
+    </div>
+  );
 }

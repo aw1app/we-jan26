@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import Movies from './components/Movies'
-import SearchBar from './components/SearchBar'
+import { Routes, Route } from 'react-router-dom';
+import MoviesList from './components/Movies';
+import MovieDetail from './components/MovieDetail';
+import './App.css';
 
 function App() {
-  
-
   return (
-    <>
-    <h1>The NetFLIX Movie App</h1>
+    <div className="container">
+      <h1>The NetFLIX Movie App</h1>
 
-    
-    <Movies />
-      
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<MoviesList />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -25,15 +25,11 @@ export const fetchMovies = createAsyncThunk(
 
 export const fetchMovieById = createAsyncThunk(
     'movies/fetchMovieById',
-    async ({ id }) => {
-
-       
+    async (id, { rejectWithValue }) => {
         try {
-            const response = await axios.get(API_URL+"/"+id);
+            const response = await axios.get(`${API_URL}/${id}`);
             return response.data;
-        }
-        catch (err) {
-            console.log(err.message);
+        } catch (err) {
             return rejectWithValue(err.message);
         }
     }
@@ -52,6 +48,7 @@ const moviesSlice = createSlice(
             items: [],
             filtered: [],
             status: 'idle',
+            selectedMovie: null, 
             error: null,
             query: '',
             genre: 'All',
@@ -89,7 +86,7 @@ const moviesSlice = createSlice(
                 })
                 .addCase(fetchMovieById.fulfilled, (state, action) => {
                     state.status = 'succeeded'
-                    state.items = action.payload
+                    state.selectedMovie = action.payload  // ✅ FIX
                 })
                 .addCase(fetchMovieById.rejected, (state, action) => {
                     state.status = 'failed'
