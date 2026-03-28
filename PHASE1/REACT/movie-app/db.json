@@ -1,0 +1,20 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "Inception",
+            "genre": "Sci-Fi",
+            "rating": 8.8,
+            "year": 2010,
+            "description": "A thief steals secrets through dream-sharing tech."
+        },
+        {
+            "id": 2,
+            "title": "The Dark Knight",
+            "genre": "Action",
+            "rating": 9.0,
+            "year": 2008,
+            "description": "Batman faces the Joker in Gotham City."
+        }
+    ]
+}
