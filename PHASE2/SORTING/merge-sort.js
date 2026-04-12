@@ -25,9 +25,9 @@ function merge(leftArray, rightArray) {
     let rightIndex = 0;
 
     // Merge the two sorted arrays 
-    if (leftIndex < leftArray.length && rightIndex < rightArray.length) {
+    if (leftIndex < leftArray.length && rightIndex < rightArray.length) { // as long as both have some elements
 
-        if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+        if (leftArray[leftIndex] <= rightArray[rightIndex]) { // Which one to push to the merged array?
             mergedArray.push(leftArray[leftIndex]);
             leftIndex++;
         }
