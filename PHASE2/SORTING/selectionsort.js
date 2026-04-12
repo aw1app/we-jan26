@@ -1,6 +1,5 @@
 function selectionSort(arr) {
 
-
     let n = arr.length;
 
     for (i = 0; i < n; i++) {
@@ -13,7 +12,7 @@ function selectionSort(arr) {
                 currMinIndex = j;
         }
 
-        [arr[i], arr[currMinIndex]] = [arr[currMinIndex], arr[i]]; // swapping
+        [ arr[i], arr[currMinIndex] ] = [ arr[currMinIndex], arr[i] ]; // swapping
 
     }
 
