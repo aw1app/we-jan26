@@ -33,5 +33,5 @@ function partition(arr, low, high) {
 const myArray = [170, 45, 75, 90, 802, 24, 2, 66];
 console.log("ORIGINAL ARRAY", myArray);
 
-quickSort(myArray,0,myArray.length-1);
+quickSort(myArray, 0, myArray.length - 1);
 console.log("SORTED ARRAY", myArray); //2, 24,  45,  66, 75, 90, 170, 802
