@@ -18,7 +18,7 @@ function radixSort(arr) {
         }
 
         // Collection back into an array
-        result.length = 0; // clear the array to avoid creating extra space
+        result.length = 0; // clear the array and reuse to avoid creating extra space
 
         // Collect numbers from buckets
         for (const bucket of radixArray) {
@@ -27,13 +27,11 @@ function radixSort(arr) {
             }
         }
 
-        //console.log("----");
-
+        console.log("--END OF PASS no -- ", exp);
         exp *= 10;
     }
 
     return result;
-
 }
 
 //
@@ -42,3 +40,7 @@ console.log("ORIGINAL ARRAY", myArray);
 
 let result = radixSort(myArray);
 console.log("SORTED ARRAY", result);
+
+// TIME COMPLKEXITY depends the no of digits in the maxVal 
+// if no of digits in the maxVal = k
+// the TC is k x n , that is o(kn)
