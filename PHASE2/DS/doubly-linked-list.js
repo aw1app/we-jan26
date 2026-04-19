@@ -28,7 +28,6 @@ class DoublyLinkedList {
 
         // the list contains atleast one node
         // so traverse till the tail node and then append the newNode
-
         let currentNode = this.head;
 
         while (currentNode.next !== null) {
@@ -41,15 +40,52 @@ class DoublyLinkedList {
         this.tail = newNode;
     }
 
+    // Update - Task for you.
+    update(data, n) {
+
+    }
+
+    deleteAtPosition(position) {
+
+        // Case 1: delete the head. i.e., position is 0
+        if (position === 0) {
+            this.head = this.head.next;
+
+            //subcases - after deleting the head above, now the list can be empty or have some elements
+            if (this.head !== null) {
+                this.head.prev = null;
+            } else {
+                this.tail = null
+            };
+
+            return;
+        }
+
+        //Case - 2 position > 0
+        // navigate to the (position-1)'th node
+        let count = 0;
+        let currentNode = this.head;
+
+        while (count < position) {
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        // you are now at the node you want to delete
+        currentNode.next.prev = currentNode.prev; //P.n.p = P.p
+        currentNode.prev.next = currentNode.next; //P.p.n = P.n
+    }
+
+
     display() {
         let current = this.head;
-        let displayOutput ="";
+        let displayOutput = "";
         while (current) {
-            displayOutput=displayOutput+ current.data + " <--> ";
+            displayOutput = displayOutput + current.data + " <--> ";
             current = current.next;
         };
 
-        console.log(displayOutput.substring(0,displayOutput.length-5));
+        console.log(displayOutput.substring(0, displayOutput.length - 5));
     }
 }
 
@@ -62,4 +98,12 @@ DLL1.add(14);
 DLL1.add(7);
 DLL1.add(55);
 
+DLL1.display();
+
+console.log("-- Deleting position 2");
+DLL1.deleteAtPosition(2);
+DLL1.display();
+
+console.log("-- Deleting head...");
+DLL1.deleteAtPosition(0);
 DLL1.display();
