@@ -81,6 +81,9 @@ class SinglyLinkedList {
         let currentNode = this.head;
 
         while (count < position - 1) {
+            // TODO: special case - if we are at the tail node now...
+            //...
+
             currentNode = currentNode.next;
             count++;
         }
