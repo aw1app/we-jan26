@@ -45,6 +45,7 @@ class SinglyLinkedList {
         };
 
         // position > 0
+        // navigate to the (position-1)'th node
         let count = 0;
         let currentNode = this.head;
 
@@ -62,7 +63,30 @@ class SinglyLinkedList {
         // if we are here, currentNode is at given position  
         newNode.next = currentNode.next;
         currentNode.next = newNode;
+    }
 
+
+
+    // DELETE Ops
+    deleteAtPosition(position) {
+
+        if (position === 0) {
+            this.head = this.head.next;
+            return;
+        }
+
+        // Delete at position > 0
+        // navigate to the (position-1)'th node
+        let count = 0;
+        let currentNode = this.head;
+
+        while (count < position - 1) {
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        // if we are here, currentNode is at one position before the node we want to delete 
+        currentNode.next = currentNode.next.next;
     }
 
 
@@ -104,8 +128,14 @@ console.log("-----");
 
 linkedlist1.addAtPosition(7, 2);
 linkedlist1.display();
-console.log("-----");
 
 linkedlist1.addAtPosition(66, 12);
 linkedlist1.display();
-console.log("-----")
+
+console.log("--Deleting at pos 0 --");
+linkedlist1.deleteAtPosition(0);
+linkedlist1.display();
+
+console.log("--Deleting at pos 2 --");
+linkedlist1.deleteAtPosition(2);
+linkedlist1.display();
