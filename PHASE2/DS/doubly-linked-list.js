@@ -52,9 +52,9 @@ class DoublyLinkedList {
             this.head = this.head.next;
 
             //subcases - after deleting the head above, now the list can be empty or have some elements
-            if (this.head !== null) {
+            if (this.head !== null) { // case when the list has some elements even after deleting the head
                 this.head.prev = null;
-            } else {
+            } else { // case when the list became empty after deleting the head
                 this.tail = null
             };
 
@@ -75,6 +75,8 @@ class DoublyLinkedList {
         currentNode.next.prev = currentNode.prev; //P.n.p = P.p
         currentNode.prev.next = currentNode.next; //P.p.n = P.n
     }
+
+    // Task update (data, position)
 
 
     display() {
