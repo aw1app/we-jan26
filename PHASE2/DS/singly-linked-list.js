@@ -12,32 +12,72 @@ class SinglyLinkedList {
         this.head = null;
     }
 
-    //1. add to the end of the list
+    //Case-1. add to the end of the list
     add(data) {
-        let newNode =  new ListNode(data);
+        let newNode = new ListNode(data);
 
-        if(this.head===null){
+        // check if the list is empty
+        if (this.head === null) {
             this.head = newNode;
             return;
         }
 
+        // if here, the list had atleast one element.
+        // create a dummy node and navigate till the tail node
         let currentNode = this.head;
 
-         while (currentNode.next !== null) {
-             currentNode = currentNode.next;
-         }
+        while (currentNode.next !== null) {
+            currentNode = currentNode.next;
+        }
 
-         // if we are here, we are at the tail node 
-         currentNode.next = newNode;
+        // if we are here, we are at the tail node 
+        currentNode.next = newNode;
+    }
+
+    // case -2: add the new node at some position n
+    addAtPosition(data, position) {
+        let newNode = new ListNode(data);
+
+        if (position === 0) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        };
+
+        // position > 0
+        let count = 0;
+        let currentNode = this.head;
+
+        while (count < position - 1) {
+            // special case - if we are at the tail node now...
+            if (currentNode.next === null) {
+                console.log("Cannot add at position ", position, " which is beyond the length of the linked list");
+                return;
+            }
+
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        // if we are here, currentNode is at given position  
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+
     }
 
 
     display() {
         let currentNode = this.head;
+
+        let output = "";
+
         while (currentNode !== null) {
-            console.log(currentNode.data, "-->");
+            //console.log(currentNode.data, "-->");
+            output = output + " " + currentNode.data + " ->";
             currentNode = currentNode.next
         }
+
+        console.log(output.substring(0, output.length - 3));
     }
 
 }
@@ -56,3 +96,16 @@ linkedlist1.add(67);
 linkedlist1.add(44);
 
 linkedlist1.display();
+console.log("-----")
+
+linkedlist1.addAtPosition(12, 0);
+linkedlist1.display();
+console.log("-----");
+
+linkedlist1.addAtPosition(7, 2);
+linkedlist1.display();
+console.log("-----");
+
+linkedlist1.addAtPosition(66, 12);
+linkedlist1.display();
+console.log("-----")
