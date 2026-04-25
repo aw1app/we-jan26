@@ -54,6 +54,7 @@ class StackLinkedList {
         let counter = 0;
 
         let currNode = this.top;
+        
         while (currNode !== null) {
             counter++;
             currNode = currNode.next;
@@ -87,4 +88,4 @@ console.log("Stack pop returned  :" , poppedVal) ; // 200
 // check the size now.
 console.log("Stack size is :" , stack1.size())
 
-// TASK : Modify the implementation to make it a fixed size stack.
+// TASK-2 : Modify the implementation to make it a fixed size stack.
