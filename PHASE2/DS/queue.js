@@ -1,7 +1,7 @@
 class Queue {
 
     constructor() {
-        this.items=[];
+        this.items = [];
         this.front = null;
         this.rear = null;
     }
@@ -12,24 +12,24 @@ class Queue {
     }
 
     // removing - remove from the front
-    dequeue(){
-        return this.items.shift(); // array's shift method will remove from the start of the array
+    dequeue() {
+        return this.items.shift(); // array's shift method will remove from the start of the array (front of the queue)
     }
 
-    getFront(){
+    getFront() {
         return this.items[0];
     }
 
-    getRear(){
+    getRear() {
         return this.items[this.items.length - 1];
     }
 
     // TASK -helper functions
-    size(){
+    size() {
 
     }
 
-    isEmpty(){
+    isEmpty() {
 
     }
 
@@ -49,3 +49,8 @@ queue1.enqueue(66);
 
 console.log(" Queue's Front after enqueing 66  is ", queue1.getFront());
 console.log(" Queue's Rear  after enqueing 66 is ", queue1.getRear());
+
+// - Let's deque now
+queue1.dequeue();
+console.log(" Queue's Front after dequeue  is ", queue1.getFront());
+console.log(" Queue's Rear  after dequeue is ", queue1.getRear());
