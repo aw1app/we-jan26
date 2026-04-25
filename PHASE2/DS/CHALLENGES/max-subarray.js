@@ -1,5 +1,5 @@
 
-
+// KADANE's ALGORITHM
 function maxSubArraySum(arr) {
 
     //Base case
