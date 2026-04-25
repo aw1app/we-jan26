@@ -96,9 +96,12 @@ class SinglyLinkedList {
     display() {
         let currentNode = this.head;
 
-        let output = "";
+          if(currentNode == null) // the list was empty
+          { console.log("list is empty" ); return;}
 
-        while (currentNode !== null) {
+        let output = "";      
+
+        while (currentNode.next !== null) {
             //console.log(currentNode.data, "-->");
             output = output + " " + currentNode.data + " ->";
             currentNode = currentNode.next
