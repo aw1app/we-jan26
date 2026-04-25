@@ -56,7 +56,9 @@ console.log("Stack size is :" , stack1.size())
 
 // Let's pop now
 let poppedVal = stack1.pop();
-console.log("Stack pop returned  :" , poppedVal)
+console.log("Stack pop returned  :" , poppedVal); // 30
 
 poppedVal = stack1.pop();
-console.log("Stack pop returned  :" , poppedVal)
+console.log("Stack pop returned  :" , poppedVal) ; // 20
+
+// TASK : Modify the implementation to make it a fixed size stack.
