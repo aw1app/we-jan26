@@ -52,31 +52,25 @@ class BinarySearchTree {
 
     preOrderTraversal( node, result = [ ] ){
 
-        if (node ) {  // check if the node is non null            
+        if (node ) {  // check if the node is non null           
             
                 result.push(node.data);
-
-                this.preOrderTraversal(node.left,result );           
-           
+                this.preOrderTraversal(node.left,result );
                 this.preOrderTraversal(node.right,result );
-
         }
         
         return result;
     }
 
 
-    //2. In order L M R 
+    //2. In order L M R . Output will be in sorted order
      inOrderTraversal ( node, result = [ ] ){
 
         if (node ) {  // check if the node is non null  
             
-                this.inOrderTraversal(node.left,result );   
-            
-                result.push(node.data);                        
-           
+                this.inOrderTraversal(node.left,result );              
+                result.push(node.data);     
                 this.inOrderTraversal(node.right,result );
-
         }
         
         return result;
