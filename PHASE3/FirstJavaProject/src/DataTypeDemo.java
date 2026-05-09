@@ -17,6 +17,7 @@ public class DataTypeDemo {
 		
 		// error because float cannot store this big number
 		//float f2 = 56545454555555666666655555555999999999999999999999995557.12f; 
+		// we can by using double data type
 		double f2 = 56545454555555666666655555555999999999999999999999995557.12d;
 		
 		
