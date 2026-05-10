@@ -28,8 +28,7 @@ public class ArraysDemo {
 
 		for (int i = 0; i < chArray1.length; i++)
 			System.out.println("chArray1 at index " + i + " has value " + chArray1[i]);
-		
-		
+
 		System.out.println("\n 2d array demo");
 		demo2dArray();
 
@@ -37,25 +36,33 @@ public class ArraysDemo {
 
 	public static void demo2dArray() {
 
-		int[][] numbers = { 
-				{ 1, 2, 3, 4, 5 },
-				{ 6, 7, 8, 9, 0 } 
-				};
-		
+		int[][] numbers = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 0 } };
+
 		for (int i = 0; i < numbers.length; i++) {
 			for (int j = 0; j < numbers[i].length; j++) {
 				System.out.print(numbers[i][j] + "\t");
 			}
 			System.out.println("");
-		};
-		
+		}
+		;
+
 		// print 4 from the numbers array. how?
-		//when i=0 and j=3
-		System.out.print(numbers[0][3] ); // 8
+		// when i=0 and j=3
+		System.out.print(numbers[0][3]); // 8
 	}
 
-}
-
-public void method1() {
+	public void method1() {
+		System.out.println("hi");
+	}
 	
+	public int method2() {
+		System.out.println("hi 2");
+		return 25;
+	}
+	
+	public boolean method3() {
+		System.out.println("hi 2");
+		return false;
+	}
+
 }
