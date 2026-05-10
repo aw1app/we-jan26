@@ -17,6 +17,8 @@ public class classD {
 		//System.out.println(ca1.x2);
 		
 		// System.out.println(ca1.x3); // protected stuff is not available in other packages
+		
+		//System.out.println(ca1.x4);
 
 	}
 

@@ -10,5 +10,7 @@ public class classA {
 	
 	protected int x3;
 	
+	private int x4;
+	
 
 }

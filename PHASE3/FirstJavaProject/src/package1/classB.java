@@ -1,5 +1,7 @@
 package package1;
 
+import package2.Customer;
+
 public class classB {
 	
 	String name;
@@ -18,6 +20,14 @@ public class classB {
 		
 		
 		System.out.println(ca1.x3);
+		
+		//System.out.println(ca1.x4); // private syuff is not accessible outside of the class it was declared.
+		
+		
+		Customer customer1 = new Customer();
+		
+		customer1.name ="sdse3er3er32";
+		
 	}
 	
 

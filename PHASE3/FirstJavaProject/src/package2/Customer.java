@@ -4,8 +4,15 @@ public class Customer {
 
 	//properties
 	int customerId;
-	String name;
+	
+	public String name = "Mohan";
 	int phoneNum;
+	
+	String PANCardNo;
+	
+	private double AADHARCardNo; 
+	
+	private double creditCardNo;
 	
 	
 	// methods
