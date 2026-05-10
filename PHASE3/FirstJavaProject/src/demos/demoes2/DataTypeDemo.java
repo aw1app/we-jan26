@@ -1,3 +1,4 @@
+package demos.demoes2;
 
 public class DataTypeDemo {
 

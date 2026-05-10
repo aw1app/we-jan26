@@ -1,3 +1,5 @@
+package demos.demoes1;
+
 public class ArraysDemo {
 
 	public static void main(String[] args) {
@@ -31,6 +33,8 @@ public class ArraysDemo {
 
 		System.out.println("\n 2d array demo");
 		demo2dArray();
+		
+		//method2();
 
 	}
 
@@ -51,17 +55,21 @@ public class ArraysDemo {
 		System.out.print(numbers[0][3]); // 8
 	}
 
-	public void method1() {
+	void method1() {
 		System.out.println("hi");
 	}
 	
 	public int method2() {
 		System.out.println("hi 2");
+		
+		 method1();
+		
 		return 25;
 	}
 	
-	public boolean method3() {
-		System.out.println("hi 2");
+	public boolean method3(String name, int age) {
+		
+		System.out.println("hi "+ name);
 		return false;
 	}
 
