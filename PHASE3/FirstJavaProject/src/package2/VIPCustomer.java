@@ -21,4 +21,11 @@ public int getCustomerId() {
     return 100000+this.customerId;
 }
 
+    // method overriding
+    // error : "methodA() in package2.VIPCustomer cannot override methodA() in package2.Customer
+    //  overridden method is final"
+//    public void methodA() {
+//        System.out.println("Inside methodA of VIPCustomer class");
+//    }
+
 }

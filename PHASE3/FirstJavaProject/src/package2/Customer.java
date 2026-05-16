@@ -13,6 +13,7 @@ public class Customer {
 
     private double creditCardNo;
 
+    public final int x=100;
 
     // constructor
     // deafult contructor
@@ -53,5 +54,10 @@ public class Customer {
 
     void bookFD(int amount) {
     }
+
+    public final void methodA() {
+        System.out.println("Inside methodA of Customer class");
+    }
+
 
 }
