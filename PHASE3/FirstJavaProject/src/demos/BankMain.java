@@ -1,14 +1,15 @@
 package demos;
 
 import package2.Customer;
+import package2.VIPCustomer;
 
 public class BankMain {
 
     public static void main(String[] args) {
-//        Customer cust1 = new Customer();
-//        cust1.name = "Mohan";
-//
-//        System.out.println(" name of cust 1 : "+ cust1.name );
+        Customer cust1 = new Customer();
+        cust1.name = "Mohan";
+
+        System.out.println(" name of cust 1 : "+ cust1.name );
 
        // cust1.phoneNum = 900000234; // compilation error "phoneNum is not public in package2.Customer; cannot be accessed from outside package"
 
@@ -22,6 +23,15 @@ public class BankMain {
         System.out.println(" Phone of cust 2 : "+ cust2.getPhoneNum() );
         cust2.setPhoneNum(555);
         System.out.println(" Phone of cust 2 : "+ cust2.getPhoneNum() );
+
+        // Cust 3
+        Customer cust3 = new Customer(124,"Raj",160455234, "AAADWX7865");
+
+
+        // VIP customer 1
+        System.out.println("\n ----- : ");
+        VIPCustomer vipCust1 = new VIPCustomer(129,"Suba",1601234);
+        System.out.println(" ID of vip cust 1 : "+ vipCust1.getCustomerId() );
 
     }
 
