@@ -25,7 +25,9 @@ public class BankMain {
         System.out.println(" Phone of cust 2 : "+ cust2.getPhoneNum() );
 
         // Cust 3
+        System.out.println("\n ----- : ");
         Customer cust3 = new Customer(124,"Raj",160455234, "AAADWX7865");
+        System.out.println(" ID of cust3 : "+ cust3.getCustomerId() );
 
 
         // VIP customer 1
