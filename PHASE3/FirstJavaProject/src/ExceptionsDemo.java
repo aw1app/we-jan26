@@ -13,9 +13,21 @@ public class ExceptionsDemo {
         try {
             f = new FileWriter("F:\\Users\\home\\git\\sl-jan26\\PHASE3\\a.txt");
             f.write("Hello");
-        } catch (IOException ex) {
+        }catch (FileNotFoundException fexp) {
+            System.out.println(" Hey some thing went wrong! contact customer care " + fexp.getMessage());
+        }
+        catch (IOException ex) {
             System.out.println(" Hey some thing went wrong! contact customer care " + ex.getMessage());
         }
+        finally {
+            try {
+                if (f != null)
+                    f.close(); // best practice - we should always close the file
+            } catch (IOException ex) {
+                System.out.println(" Hey some thing went wrong! contact customer care " + ex.getMessage());
+            }
+        }
+
 
 
 //    int[] myArr = {4,5,99,100};

@@ -35,6 +35,15 @@ public class BankMain {
         VIPCustomer vipCust1 = new VIPCustomer(129,"Suba",1601234);
         System.out.println(" ID of vip cust 1 : "+ vipCust1.getCustomerId() );
 
+
+        // Book a FD for 1000000
+        System.out.println(" Trying to book FD for 100000 ");
+        try {
+            cust3.bookFD(1);
+        }catch(exceptions.FDNotBookableException ex){
+            System.out.println(" Hey some thing went wrong! contact customer care " + ex.getMessage());
+        }
+
     }
 
 }

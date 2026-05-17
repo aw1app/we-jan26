@@ -1,5 +1,7 @@
 package package2;
 
+import exceptions.FDNotBookableException;
+
 public class Customer {
 
     public String name = "Mohan";
@@ -52,7 +54,17 @@ public class Customer {
     }
 
 
-    void bookFD(int amount) {
+    public void bookFD(int amount, int noOfYears) throws FDNotBookableException {
+        if(amount<10) {
+            System.out.println(" Got an FD booking amt of 10 ");
+            throw new FDNotBookableException(" Cannot book FD for less than amount of USD/INR 10");
+        }
+        else if( noOfYears > 10) {
+            System.out.println(" Got an FD booking for more than 10 years  ");
+            throw new FDNotBookableException(" Cannot book FD for more than 10 years ");
+        }else{
+            System.out.println(" FD booked ");
+        }
     }
 
     public final void methodA() {
