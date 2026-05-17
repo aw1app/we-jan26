@@ -36,10 +36,11 @@ public class BankMain {
         System.out.println(" ID of vip cust 1 : "+ vipCust1.getCustomerId() );
 
 
-        // Book a FD for 1000000
-        System.out.println(" Trying to book FD for 100000 ");
+        // Book a FD for 1 or some other amount
+        int fDAmt = 1;
+        System.out.println(" Trying to book FD for  "+ fDAmt);
         try {
-            cust3.bookFD(1);
+            cust3.bookFD(fDAmt);
         }catch(exceptions.FDNotBookableException ex){
             System.out.println(" Hey some thing went wrong! contact customer care " + ex.getMessage());
         }
