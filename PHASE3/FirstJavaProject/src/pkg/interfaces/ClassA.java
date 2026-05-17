@@ -6,6 +6,6 @@ public class ClassA implements InterfaceA{
         System.out.println(" inside methodA() of classA ");
     };
 
-    public void methodB(){};
+    public void methodB(int x, String s){};
 
 }
