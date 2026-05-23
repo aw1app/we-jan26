@@ -3,16 +3,52 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class BankMain {
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         //mainArrayListDemo();
+       // setDemo();
 
-        mainSetDemo();
+        mapDemo();
 
+        scanner.close();
     }
 
-    public static void mainSetDemo() {
+    public static void mapDemo() {
+        System.out.println(" -- Map Demo -- ");
+        Map<Integer, Customer> customerIdMap = new HashMap<>();
+
+        Customer cust1 = new Customer();
+        cust1.name = "Mohan";
+        cust1.setPhoneNum(90000);
+        cust1.customerId=122;
+
+        // Add the mapping id,customer obj
+        customerIdMap.put(cust1.customerId, cust1);
+
+        // Add another 2 mappings
+        Customer cust2 = new Customer(123, "Susan", 90005);
+        Customer cust3 = new Customer(124, "Raj", 80000, "AAADWX7865");
+
+        customerIdMap.put(cust2.customerId, cust2);
+        customerIdMap.put(cust3.customerId, cust3);
+
+        // Maps are extremely fast for retrieval/ search ops
+        // Take the id input from app user. We will print complete details the customer if found.
+        System.out.println("ENTER THE ID OF CUSTOMER YOU WANT THE DETAILS :");
+        Integer id = scanner.nextInt();
+
+        Customer customer = customerIdMap.get(id);
+        if(customer!= null){
+            System.out.println(" Found customer with id  " + id );
+            System.out.println(customer); // customer.toString() will get called
+        }else{
+            System.out.println(" Customer with id  " + id  + " not found!");
+        };
+    }
+
+    public static void setDemo() {
         System.out.println(" -- Set Demo -- ");
         Set<Customer> customers = new HashSet<>();
 

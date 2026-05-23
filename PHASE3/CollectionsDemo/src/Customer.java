@@ -65,4 +65,8 @@ public class Customer {
     public void sendNewYearGreeting(String message){
         System.out.println(this.name + ", " + message );
     };
+
+    public String toString() {
+        return "Customer Details ID: " + this.customerId + ", NAME:" + name + ", PHONE:" + phoneNum ;
+    }
 }
