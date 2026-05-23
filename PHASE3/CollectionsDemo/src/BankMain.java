@@ -8,11 +8,38 @@ public class BankMain {
     public static void main(String[] args) {
 
         //mainArrayListDemo();
-       // setDemo();
-
-        mapDemo();
-
+        // setDemo();
+//        mapDemo();
+        stackDemo();
         scanner.close();
+    }
+
+    public static void stackDemo() {
+        System.out.println(" -- Stack Demo -- ");
+        Stack<Customer> customerStack = new Stack<>();
+
+        Customer cust1 = new Customer();
+        cust1.name = "Mohan";
+        cust1.setPhoneNum(90000);
+        cust1.customerId = 122;
+
+        Customer cust2 = new Customer(123, "Susan", 90005);
+        Customer cust3 = new Customer(124, "Raj", 80000, "AAADWX7865");
+
+        customerStack.push(cust1);
+        customerStack.push(cust2);
+        customerStack.push(cust3);
+
+        // Simplified for loop
+        System.out.println(" -- Looping using Simplified for loop -- ");
+        for (Customer cust : customerStack) {
+            cust.sendNewYearGreeting("Wish you a happy new year !!");
+        }
+
+        // Pop out, we should cust3
+        System.out.println(" -- Pop out -- ");
+        Customer cust = customerStack.pop();
+        System.out.println(cust);
     }
 
     public static void mapDemo() {
@@ -22,7 +49,7 @@ public class BankMain {
         Customer cust1 = new Customer();
         cust1.name = "Mohan";
         cust1.setPhoneNum(90000);
-        cust1.customerId=122;
+        cust1.customerId = 122;
 
         // Add the mapping id,customer obj
         customerIdMap.put(cust1.customerId, cust1);
@@ -40,12 +67,13 @@ public class BankMain {
         Integer id = scanner.nextInt();
 
         Customer customer = customerIdMap.get(id);
-        if(customer!= null){
-            System.out.println(" Found customer with id  " + id );
+        if (customer != null) {
+            System.out.println(" Found customer with id  " + id);
             System.out.println(customer); // customer.toString() will get called
-        }else{
-            System.out.println(" Customer with id  " + id  + " not found!");
-        };
+        } else {
+            System.out.println(" Customer with id  " + id + " not found!");
+        }
+        ;
     }
 
     public static void setDemo() {
@@ -55,7 +83,7 @@ public class BankMain {
         Customer cust1 = new Customer();
         cust1.name = "Mohan";
         cust1.setPhoneNum(90000);
-        cust1.customerId=122;
+        cust1.customerId = 122;
 
         customers.add(cust1);
 
@@ -74,30 +102,30 @@ public class BankMain {
 
         // Simplified for loop
         System.out.println(" -- Looping using Simplified for loop -- ");
-        for (Customer cust: customers){
+        for (Customer cust : customers) {
             cust.sendNewYearGreeting("Wish you a happy new year !!");
         }
 
         // TASK-1: Try the Stream methods and loop through
         System.out.println(" -- Looping using stream's forEach -- ");
         customers.stream().forEach(
-                cust ->  cust.sendNewYearGreeting("Wish you a happy new year !!")
+                cust -> cust.sendNewYearGreeting("Wish you a happy new year !!")
         );
 
         System.out.println(" -- Looping using shortcut forEach -- ");
         customers.forEach(
-                cust ->  cust.sendNewYearGreeting("Wish you a happy new year !!")
+                cust -> cust.sendNewYearGreeting("Wish you a happy new year !!")
         );
 
 
         // Stream power
         // Filtering / Searching
         System.out.println(" --customers filtered by customer id >= 123 -- ");
-        Set<Customer > customersHavingIdGE123= customers.stream()
-                .filter( cust -> cust.customerId >= 123 )
+        Set<Customer> customersHavingIdGE123 = customers.stream()
+                .filter(cust -> cust.customerId >= 123)
                 .collect(Collectors.toSet());
 
-        customersHavingIdGE123.forEach( cust -> System.out.println(cust.name+ "," + cust.customerId));
+        customersHavingIdGE123.forEach(cust -> System.out.println(cust.name + "," + cust.customerId));
 
         //TASK-2: Search if a customer with a particular ID exist. 123, 125
 
@@ -105,11 +133,11 @@ public class BankMain {
 
         // Stream limits.
         System.out.println(" -- print only 2 customers using limits -- ");
-        Set<Customer > customersSetOf2 = customers.stream()
+        Set<Customer> customersSetOf2 = customers.stream()
                 .limit(2)
                 .collect(Collectors.toSet());
 
-        customersSetOf2.forEach( cust -> System.out.println(cust.name+ "," + cust.customerId));
+        customersSetOf2.forEach(cust -> System.out.println(cust.name + "," + cust.customerId));
 
     }
 
@@ -148,7 +176,7 @@ public class BankMain {
         }
 
         // Simplified for loop
-        for (Customer cust: customers){
+        for (Customer cust : customers) {
             cust.sendNewYearGreeting("Wish you a happy new year !!");
         }
 
