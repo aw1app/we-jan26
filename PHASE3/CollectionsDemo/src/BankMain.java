@@ -36,7 +36,7 @@ public class BankMain {
 
         // Maps are extremely fast for retrieval/ search ops
         // Take the id input from app user. We will print complete details the customer if found.
-        System.out.println("ENTER THE ID OF CUSTOMER YOU WANT THE DETAILS :");
+        System.out.print("ENTER THE ID OF CUSTOMER YOU WANT THE DETAILS :");
         Integer id = scanner.nextInt();
 
         Customer customer = customerIdMap.get(id);
