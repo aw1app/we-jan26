@@ -2,15 +2,20 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        MyThread t1 = new MyThread();
+        Thread t1 = new MyThread();
+        t1.setPriority(2);
         t1.start();
 
-        MyThread t2 = new MyThread();
+        Thread t2 = new MyThread();
+        //t2.setName("car painting thread");
+        t2.setPriority(7);
         t2.start();
 
         //Thread Objects of Runnable implementation
-        MyThreadUsingRunnable r1 = new MyThreadUsingRunnable();
+        Runnable r1 = new MyThreadUsingRunnable();
         Thread rt1 = new Thread(r1);
+        rt1.setPriority(10);
+        //rt1.setName("car assembly thread");
         rt1.start();
 
         MyThreadUsingRunnable r2 = new MyThreadUsingRunnable();
