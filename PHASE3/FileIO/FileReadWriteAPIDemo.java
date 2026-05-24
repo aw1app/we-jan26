@@ -31,6 +31,17 @@ public class FileReadWriteAPIDemo {
             String content = Files.readString(path1);
             System.out.println(" content " + content);
         } catch (Exception e) {
+            System.out.println(" Exception happened " + e.getMessage());
+        }
+
+
+        // WRITING TO A FILE
+        Path path2 = Path.of("b.txt");
+        try {
+            Files.writeString(path2, " Tomorrow is Monday");
+            System.out.println(" File b.txt updated successfully ");
+        }catch (Exception e) {
+            System.out.println(" Exception happened " + e.getMessage());
         }
 
     }
