@@ -1,3 +1,5 @@
+package example.synchronized;
+
 public class RestaurantMain {
 
     public static void main(String[] args) {

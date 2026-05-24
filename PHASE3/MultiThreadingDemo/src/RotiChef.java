@@ -1,3 +1,5 @@
+package example.synchronized;
+
 public class RotiChef  extends Thread {
 
     Plate plate;

@@ -1,8 +1,10 @@
+package example.synchronized;
+
 public class DosaChef extends Thread {
 
-    Plate plate;
+    example.Plate plate;
 
-    public DosaChef(Plate plate) {
+    public DosaChef(example.Plate plate) {
         super();
         this.plate = plate;
     }

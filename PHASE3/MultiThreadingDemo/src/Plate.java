@@ -1,3 +1,5 @@
+package example.synchronized;
+
 public class Plate {
 
     synchronized void addItem(String item) {
