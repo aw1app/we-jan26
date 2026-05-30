@@ -32,7 +32,6 @@ public class JDBCCallableStatementDemo {
         System.out.printf(" CALL CountProductsByPrefix(?) demo  \n");
         while (resultSet2.next()) {
             int totalProducts = resultSet2.getInt("totalProducts");
-
             System.out.printf("%d products found \n", totalProducts);
         }
 
@@ -45,7 +44,6 @@ public class JDBCCallableStatementDemo {
         System.out.printf(" CALL FindLargestNumber(?) demo  \n");
         while (resultSet3.next()) {
             int LargestNumber = resultSet3.getInt("LargestNumber");
-
             System.out.printf("%d is LargestNumber \n", LargestNumber);
         }
 
