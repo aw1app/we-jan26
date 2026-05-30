@@ -15,3 +15,61 @@ INSERT INTO products (id, name, price, description) VALUES
 (1, 'Dell Monitor', 12000.99, NULL),
 (3, 'HP Mouse', 700.00, NULL),
 (4, 'Apple iPad', 100000.00, NULL);
+
+
+## STORED PROCEDURE CREATION
+DELIMITER //
+CREATE PROCEDURE GetAllProducts()
+BEGIN
+    SELECT * FROM products;
+END //
+DELIMITER ;
+
+##TESTING THE SP
+CALL GetAllProducts();
+
+
+## One more SP
+DELIMITER //
+CREATE PROCEDURE CountProductsByPrefix(
+    IN productPrefix VARCHAR(100)
+)
+BEGIN
+    SELECT COUNT(*) AS totalProducts
+    FROM products
+    WHERE name LIKE CONCAT(productPrefix, '%');
+END //
+DELIMITER ;
+
+// SP
+DELIMITER //
+
+CREATE PROCEDURE FindLargestNumber(
+    IN num1 INT,
+    IN num2 INT
+)
+BEGIN
+    DECLARE largest INT;
+
+    SET largest = num1;
+
+    IF num2 > largest THEN
+        SET largest = num2;
+    END IF;
+
+    SELECT largest AS LargestNumber;
+END //
+
+DELIMITER ;
+
+
+mysql> CALL FindLargestNumber(20,35);
++---------------+
+| LargestNumber |
++---------------+
+|            35 |
++---------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
