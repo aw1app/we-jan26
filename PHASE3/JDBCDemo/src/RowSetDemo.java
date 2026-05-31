@@ -31,9 +31,7 @@ public class RowSetDemo {
             System.out.printf("%-4d  %-20s  %12.2f \n", rowSet.getInt("id"), rowSet.getString("name"),
                     rowSet.getFloat("price"));
 
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        } catch (Exception e) { System.out.println(e);}
 
         con.close();
     }
