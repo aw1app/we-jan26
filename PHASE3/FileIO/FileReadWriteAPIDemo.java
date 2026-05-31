@@ -38,9 +38,13 @@ public class FileReadWriteAPIDemo {
         // WRITING TO A FILE
         Path path2 = Path.of("b.txt");
         try {
-            Files.writeString(path2, " Tomorrow is Monday");
+            // Files.writeString(path2, " Tomorrow is Monday"); // overwrite existing content
+
+            // appending demo
+            Files.writeString(path2, "\nDay After Tomorrow is Tuesday", StandardOpenOption.APPEND);
+
             System.out.println(" File b.txt updated successfully ");
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(" Exception happened " + e.getMessage());
         }
 
