@@ -20,24 +20,19 @@ public class TransactionDemo {
 
             stmt.setString(1, "HP AI PC 10");
             stmt.setFloat(2, 65000.0f);
-
             stmt.addBatch();
 
             stmt.setString(1, "HP AI PC 20");
             stmt.setFloat(2, 75000.0f);
-
             stmt.addBatch();
 
             stmt.setString(1,
                     "HP AI PC 30 QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
             stmt.setFloat(2, 67000.0f);
-
             stmt.addBatch();
-
 
             stmt.setString(1, "HP AI PC 40");
             stmt.setFloat(2, 76000.0f);
-
             stmt.addBatch();
 
             int[] counts = stmt.executeBatch();
