@@ -67,3 +67,5 @@ public class Main {
         System.out.println("Product updated successfully:");
     }
 }
+
+//MONGO-TASK-1: Write code insert 3 products. The 3rd product should have vendor details as well.
