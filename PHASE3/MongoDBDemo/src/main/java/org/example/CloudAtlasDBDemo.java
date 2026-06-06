@@ -18,20 +18,20 @@ public class CloudAtlasDBDemo {
 
 
 
-        // The insertion should fail because of schema enforcement we did above
-        Document prod1 = new Document();
-        prod1.append("id", 1);
-        prod1.append("price", 7777.46f); // price is NOT Max 100000
-        prod1.append("name", "HP AI PC 77");
-
-        try {
-            productsCollection.insertOne(prod1);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        System.out.println("PRODUCTS IN THE COLLECTIONS");
-        listProducts();
+//        // The insertion should fail because of schema enforcement we did above
+//        Document prod1 = new Document();
+//        prod1.append("id", 1);
+//        prod1.append("price", 7777.46f); // price is NOT Max 100000
+//        prod1.append("name", "HP AI PC 77");
+//
+//        try {
+//            productsCollection.insertOne(prod1);
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//
+//        System.out.println("PRODUCTS IN THE COLLECTIONS");
+//        listProducts();
     }
 
     private static void listProducts() {
@@ -41,7 +41,7 @@ public class CloudAtlasDBDemo {
     }
 
     private static void connectToMongoDB() {
-        String cloudDBURL = "mongodb+srv://ciscouser1:<password>@cluster0.ixxay.mongodb.net/?appName=Cluster0&connectTimeoutMS=60000&socketTimeoutMS=60000";
+        String cloudDBURL = "mongodb+srv://ciscouser1:<db_password>@cluster0.ixxay.mongodb.net/?appName=Cluster0&connectTimeoutMS=60000&socketTimeoutMS=60000";
         mongoClient = MongoClients.create(cloudDBURL);
 
 
