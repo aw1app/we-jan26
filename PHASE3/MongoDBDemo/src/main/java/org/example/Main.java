@@ -20,16 +20,19 @@ public class Main {
         System.out.println("PRODUCTS IN THE COLLECTIONS");
         listProducts();
 
-        Document prod1 = new Document();
-        prod1.append("id",14);
-        prod1.append("price",30000.46f);
-        prod1.append("name","HP AI PC 4");
-
-        System.out.println("INSERTING A NEW PRODUCT IN THE COLLECTIONS");
-        insertProduct(prod1);
+//        Document prod1 = new Document();
+//        prod1.append("id", 14);
+//        prod1.append("price", 30000.46f);
+//        prod1.append("name", "HP AI PC 4");
+//
+//        System.out.println("INSERTING A NEW PRODUCT IN THE COLLECTIONS");
+//        insertProduct(prod1);
 
 //        // Update the name
 //        updateProduct("HP AI PC 1", 25.0f);
+
+        // Update all those products whose current price is > = 5000
+        updateProducts(5000.0f, 10000.0f);
 
         System.out.println("PRODUCTS IN THE COLLECTIONS AFTER INSERTING THE ABOVE DOC ");
         listProducts();
@@ -51,7 +54,7 @@ public class Main {
     private static void listProducts() {
         System.out.println("\nAll Products:");
 
-        productsCollection.find().forEach(doc -> System.out.println(doc.toJson()));;
+        productsCollection.find().forEach(doc -> System.out.println(doc.toJson()));        ;
     }
 
     private static void insertProduct(Document newProductDoc) {
@@ -60,11 +63,20 @@ public class Main {
 
     private static void updateProduct(String name, float newPrice) {
         Bson nameFilter = Filters.not(Filters.eq("name", name));
-        Bson update = Updates.set("price",newPrice);
+        Bson update = Updates.set("price", newPrice);
 
         //productsCollection.updateOne(nameFilter,update );
-        productsCollection.updateMany(nameFilter,update );
+        productsCollection.updateMany(nameFilter, update);
         System.out.println("Product updated successfully:");
+    }
+
+    // update products given price GTE  setting it's new price
+    private static void updateProducts(float price, float newPrice) {
+        Bson idFilter = Filters.gte("price", price);
+        Bson update = Updates.set("price", newPrice);
+
+        productsCollection.updateMany(idFilter, update);
+        System.out.println("Successfully updated price for many docs");
     }
 }
 
