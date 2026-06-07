@@ -44,7 +44,6 @@ public class CloudAtlasDBDemo {
         String cloudDBURL = "mongodb+srv://ciscouser1:<db_password>@cluster0.ixxay.mongodb.net/?appName=Cluster0&connectTimeoutMS=60000&socketTimeoutMS=60000";
         mongoClient = MongoClients.create(cloudDBURL);
 
-
         database = mongoClient.getDatabase("we_jan_26");
         productsCollection = database.getCollection("products");
         System.out.println("Successfully connected to products collection of we_jan_26 database on the cloud atlas;");
