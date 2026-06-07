@@ -16,7 +16,6 @@ public class FormProcessingServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-
         PrintWriter out = resp.getWriter();
 
         // Extract form submision data
@@ -28,11 +27,11 @@ public class FormProcessingServlet extends HttpServlet {
 
         String specialities = req.getParameter("specialities");
 
-//        for(String type: userTypes)
-//        System.out.println(type);
+        //for(String type: userTypes)
+        //System.out.println(type);
 
         out.println("<br><i> Thanks for submitting your profile data </i>.");
-        out.println("<br><br> You submitted name:"+userName + ",password = "+password
+        out.println("<br><br> You submitted name:" + userName + ",password = " + password
                 + " and userTypes=" + Arrays.toString(userTypes));
         out.println("<br><br> Your specialities " + specialities);
 

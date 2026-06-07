@@ -18,5 +18,14 @@ public class HelloServlet extends HttpServlet {
 
         response.getWriter()
                 .println("Hello Servlet");
+
+        String userName = request.getParameter("name");
+        String age = request.getParameter("age");
+
+        response.getWriter()
+                .println("Oh, your name is " + userName + " and age is "+ age);
+
+        response.getWriter()
+                .println("Have a great day! " );
     }
 }
