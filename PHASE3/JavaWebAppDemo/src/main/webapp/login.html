@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body>
+<h2 style="text-align: center">User Login</h2>
+<form action="process-login" method="post">
+
+    User Name: <input type="text" name="username"> <br>
+    <br> Password: <input type="password" name="password"> <br>
+    <br>
+
+    User Type:
+    <input type="checkbox" name="user-type" value="corp-user"> Corporate User
+    <input type="checkbox" name="user-type" value="retail-user"> Retail User
+    <input type="checkbox" name="user-type" value="nri-user"> NRI
+    <input type="checkbox" name="user-type" value="employee-user"> Employee of this company
+
+    <br> Your Specialities:<br>
+    <textarea rows="10" cols="80" name="specialities"></textarea>
+
+    <br><br> <input type="submit">
+
+</form>
+
+
+</body>
+</html>

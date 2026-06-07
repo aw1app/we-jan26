@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 // CRTL + ALT + O for automatic import
-
 @WebServlet("/second") // URL mapping
 public class SecondServlet extends HttpServlet {
 
