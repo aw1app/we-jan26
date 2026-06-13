@@ -8,7 +8,19 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    
+    <servlet>
+        <servlet-name>VotingServlet</servlet-name>
+        <servlet-class>com.sl.VotingServlet</servlet-class>
+    </servlet>
+
+    <filter>
+        <filter-name>VoteFilter</filter-name>
+        <filter-class>com.sl.filter.VoteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>VoteFilter</filter-name>
+        <url-pattern>/register-vote</url-pattern>
+    </filter-mapping>
 
 
 </web-app>
