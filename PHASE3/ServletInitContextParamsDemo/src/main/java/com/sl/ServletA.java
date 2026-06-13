@@ -19,10 +19,9 @@ public class ServletA extends HttpServlet {
 //        contentOfFile = Files.readString(Path.of("a.txt"));
         try {
             String myFile = config.getInitParameter("filePathA");
-            System.out.println("myFile = " + myFile);
             contentOfFile = Files.readString(Path.of(myFile));
         } catch (IOException e) {
-            //throw new RuntimeException(e);
+            System.out.println(e);
         }
 
        System.out.println(" File content : " + contentOfFile);
