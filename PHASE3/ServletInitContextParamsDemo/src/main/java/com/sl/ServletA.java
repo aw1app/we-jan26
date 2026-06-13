@@ -1,3 +1,5 @@
+package com.sl;
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,15 +9,21 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
+import java.nio.file.*;
 
-@WebServlet("/init-demo")
+//@WebServlet("/init-demo")
 public class ServletA extends HttpServlet {
     String contentOfFile = null;
 
     public void init(ServletConfig config) {
-//        contentOfFile = Files.readString("a.txt");
-       contentOfFile = Files.readString(config.getInitParameter("filePathA"));
+//        contentOfFile = Files.readString(Path.of("a.txt"));
+        try {
+            String myFile = config.getInitParameter("filePathA");
+            System.out.println("myFile = " + myFile);
+            contentOfFile = Files.readString(Path.of(myFile));
+        } catch (IOException e) {
+            //throw new RuntimeException(e);
+        }
 
        System.out.println(" File content : " + contentOfFile);
     }
