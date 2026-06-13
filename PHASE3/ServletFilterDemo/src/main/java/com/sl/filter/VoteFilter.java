@@ -19,10 +19,10 @@ public class VoteFilter implements Filter {
         if(age<18){
             out.print("You are under 18 and therefore not eligible to vote!");
             System.out.println("INSIDE VoteFilter's doFilter() of VoteFilter's if part");
-            out.close();
+            out.close(); // don't go to the servlet.
         }else{
             System.out.println("INSIDE VoteFilter's doFilter() of VoteFilter's else part");
-            chain.doFilter(request, response);
+            chain.doFilter(request, response); // transfers control to the servlet mapped for /register-vote
         }
 
     }
