@@ -8,6 +8,11 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <context-param>
+        <param-name>common_param_1</param-name>
+        <param-value>100</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>ServletA</servlet-name>
         <servlet-class>com.sl.ServletA</servlet-class>
@@ -17,12 +22,33 @@
             <param-value>F:/Users/home/git/we-jan26/PHASE3/ServletInitContextParamsDemo/b.txt</param-value>
         </init-param>
 
+        <init-param>
+            <param-name>param2</param-name>
+            <param-value>value2</param-value>
+        </init-param>
+
     </servlet>
 
 <servlet-mapping>
     <servlet-name>ServletA</servlet-name>
     <url-pattern>/init-demo</url-pattern>
 </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletB</servlet-name>
+        <servlet-class>com.sl.ServletB</servlet-class>
+
+        <init-param>
+            <param-name>param_b_1</param-name>
+            <param-value>value_b_1</param-value>
+        </init-param>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletB</servlet-name>
+        <url-pattern>/servlet-b</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
