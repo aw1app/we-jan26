@@ -10,9 +10,7 @@ public class VoteFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-
         System.out.println("INSIDE doFilter() of VoteFilter");
-
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
@@ -27,7 +25,6 @@ public class VoteFilter implements Filter {
             chain.doFilter(request, response);
         }
 
-        out.close();
     }
 
 }
