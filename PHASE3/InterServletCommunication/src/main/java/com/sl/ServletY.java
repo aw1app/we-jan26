@@ -10,16 +10,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/servlet-2")
-public class Servlet2 extends HttpServlet {
+@WebServlet("/servlet-y")
+public class ServletY extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        out.println("<br> RESPONSE-1 from servlet-2");
+        out.println("<br> RESPONSE-1 from servlet-y");
 
-        //out.close();
+        out.close();
     }
 
 }

@@ -17,11 +17,13 @@ public class Servlet1 extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+        out.println("<br> RESPONSE-1 from servlet-1");
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/servlet-2");
 
         dispatcher.include(request,response); // go to /servlet-2 and include it's response here
 
-        out.println("<br> RESPONSE from servlet-1");
+        out.println("<br> RESPONSE-2 from servlet-1");
 
         out.close();
     }
