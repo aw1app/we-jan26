@@ -12,27 +12,17 @@
 	password="rootroot" />
 
 <sql:query dataSource="${estore}" var="resultSet">
-SELECT * FROM products
+SELECT * FROM products WHERE id=<%=request.getParameter("id") %>
 </sql:query>
 
+<br><br><hr>
+<h2>EDIT and SAVE PRODUCT</h2>
 
-<br>LIST OF PRODUCTS <br>
-<table border=1>
-	<tr style="background-color:lightgrey">
-		<th>ID
-		<th>NAME
-		<th>PRICE
-		<th>DELETE
-		<th>EDIT
-	</tr>
+<form action="update-product.jsp" method="POST" >
+<input type="hidden" name="id" value="${resultSet.rows[0].id}">
+Name: <input name="name" value="${resultSet.rows[0].name}"> <br>
+Price: <input name="price" value="${resultSet.rows[0].price}"> <br><br>
+<input type="submit" value="UPDATE"> <br>
+</form>
 
-<c:forEach var="row" items="${resultSet.rows}">
-		<tr>
-			<td>${row.id }
-			<td>${row.name }
-			<td> ${row.price}
-			<td><a  href="delete-product.jsp?id=${row.id}" > DELETE </a>
-			<td><a  href="edit-product-form.jsp?id=${row.id}" > EDIT </a>
-		</tr>
-	</c:forEach>
-</table>
+

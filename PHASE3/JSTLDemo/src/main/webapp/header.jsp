@@ -3,4 +3,8 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
-<jsp:include page="header.jsp" />
+
+<a href="products.jsp"> LIST PRODUCTS</a>     |
+<a href="new-product.html"> ADD PRODUCTS </a>
+
+<br><br>
