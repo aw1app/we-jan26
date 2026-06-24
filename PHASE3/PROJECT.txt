@@ -1,1 +1,9 @@
-watch this file on Monday 22 june.
+JSTL SQL demo with all CRUD operations for our PRODUCTS table.
+
+Code added can be found here:  https://github.com/aw1app/we-jan26/commit/f2aadd97e46119aa026e3b791221053cfe93c1fc
+Files changed are all in : https://github.com/aw1app/we-jan26/tree/main/PHASE3/JSTLDemo/src/main/webapp
+
+Better still watch the video of all that happened : video1752772728.mp4
+
+
+
