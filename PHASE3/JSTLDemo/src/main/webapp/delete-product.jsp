@@ -17,4 +17,4 @@ DELETE FROM products where id=<%=request.getParameter("id") %>
 
 </sql:update>
 
-<c:redirect url='products.jsp' ></c:redirect>
+<c:redirect url='index.jsp' ></c:redirect>

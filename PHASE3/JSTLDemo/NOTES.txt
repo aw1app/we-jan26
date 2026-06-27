@@ -1,0 +1,3 @@
+CREATE TABLE users ( user_id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(50) NOT NULL,  password VARCHAR(50) NOT NULL);
+
+INSERT INTO users(name,password) VALUES ('rohit','zumba123'), ('mike','welcome123');
