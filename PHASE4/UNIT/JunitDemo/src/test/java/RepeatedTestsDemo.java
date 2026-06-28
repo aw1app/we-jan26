@@ -9,12 +9,18 @@ import org.junit.jupiter.api.condition.OS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RepeatedTestsDemo {
-    Calculator calc = null;
+    static Calculator calc = null;
 
-    @BeforeEach
-    void myBeforeEach() {
-        System.out.println(" INSIDE myBeforeEach. This method will run before each test case in this class  ");
+    @BeforeAll
+    void myBeforeAll() {
+        System.out.println(" INSIDE myBeforeAll. This method will run before any test case in this class  ");
         calc = new Calculator();
+    }
+
+    @AfterAll
+    void myAfterAll() {
+        System.out.println(" INSIDE myAfterAll. This method will run after ALL test cases have been run in this class  ");
+        calc = null;
     }
 
     // Req No 1 (Calculator must have the add functionality) test case
@@ -27,7 +33,6 @@ public class RepeatedTestsDemo {
         assertEquals( expectedResult, actualResult);
     }
 
-    
     @RepeatedTest(5)
     void testAdd2(){
         System.out.println(" INSIDE testAdd2");
