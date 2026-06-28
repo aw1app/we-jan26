@@ -5,15 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest2 {
     Calculator calc = null;
+    // static Connection connection = null;
 
     @BeforeAll
     static void myBeforeAll() {
         System.out.println(" INSIDE myBeforeAll. This method will run before starting any of the test case  in this class  ");
+        // connection = DriverManager.getConnection(url, uid, pass);
     }
 
     @AfterAll
     static void myAfterAll() {
         System.out.println(" INSIDE myAfterAll. This method will run after all test cases have been run  ");
+        // connection.close();
     }
 
     @BeforeEach
