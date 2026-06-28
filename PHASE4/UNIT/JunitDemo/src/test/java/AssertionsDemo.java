@@ -30,7 +30,7 @@ public class AssertionsDemo {
         int a = 4;
         int b = 0;
 
-//        assertEquals(a, b); // FAIL
+//      assertEquals(a, b); // FAIL
         assertNotEquals(a, b);
 
         assertTrue(a > b);
@@ -44,6 +44,8 @@ public class AssertionsDemo {
 //        assertThrows(ArithmeticException.class, () -> {
 //            calc.add(2, 3);
 //        });
+
+
 
         
     }
