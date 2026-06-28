@@ -1,7 +1,12 @@
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import java.time.Instant;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +15,8 @@ public class ParametrizedTestDemo {
 
     @BeforeAll
     static void myBeforeAll() {
-        System.out.println(" INSIDE myBeforeAll. This method will run before starting any of the test case  in this class  ");
+        long millis = Instant.now().toEpochMilli();
+        System.out.println( millis + " INSIDE myBeforeAll. This method will run before starting any of the test case  in this class  ");
         calc = new Calculator();
     }
 
@@ -29,7 +35,18 @@ public class ParametrizedTestDemo {
             }
     )
     void testAdd1(int a, int b, int expectedResult) {
-        System.out.println(" INSIDE testAdd1");
+        long millis = Instant.now().toEpochMilli();
+        System.out.println(millis + " INSIDE testAdd1");
+        int actualResult = calc.add(a, b);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    @Disabled
+    void testAdd2(int a, int b, int expectedResult) {
+        long millis = Instant.now().toEpochMilli();
+        System.out.println(millis + " INSIDE testAdd2");
         int actualResult = calc.add(a, b);
 
         assertEquals(expectedResult, actualResult);
