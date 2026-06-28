@@ -8,5 +8,10 @@
         <constructor-arg  value="50000f"/>
     </bean>
 
+    <bean id="product2" class="ProductV2">
+        <constructor-arg  value="HP AI PC"/>
+        <constructor-arg  value="150000f"/>
+    </bean>
+
 
 </beans>
