@@ -3,14 +3,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="product1" class="ProductV3">
-        <constructor-arg  value="Dell AI PC"/>
-        <constructor-arg  value="50000f"/>
-    </bean>
+<!--    <bean id="product1" class="ProductV3">-->
+<!--        <constructor-arg  value="Dell AI PC"/>-->
+<!--        <constructor-arg  value="50000f"/>-->
+<!--    </bean>-->
 
-    <bean id="product2" class="ProductV2">
-        <constructor-arg  value="HP AI PC"/>
-        <constructor-arg  value="150000f"/>
+<!--    <bean id="product2" class="ProductV2">-->
+<!--        <constructor-arg  value="HP AI PC"/>-->
+<!--        <constructor-arg  value="150000f"/>-->
+<!--    </bean>-->
+
+
+    <bean id="product1" class="ProductV3">
+        <property name="name" value="Dell AI PC" />
+        <property name="price" value="50000f" />
     </bean>
 
 
