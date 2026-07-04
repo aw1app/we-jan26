@@ -4,13 +4,12 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-public class Brand implements IBrand{
-    String name = "Sony";
+public class BrandV2 implements IBrand{
+    String name = "Phillips";
 
-    public Brand(){
+    public BrandV2(){
     }
-    public Brand(String name){
+    public BrandV2(String name){
         this.name = name;
     }
 
