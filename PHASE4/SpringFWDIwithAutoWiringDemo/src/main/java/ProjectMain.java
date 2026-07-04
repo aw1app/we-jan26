@@ -20,7 +20,7 @@ public class ProjectMain {
         System.out.println(" com.sl.Product price is " + p1.getPrice());
 
         IBrand p1Brand  = p1.getBrand();
-        System.out.println("\n\n com.sl.Brand name is " +p1Brand.getName());
+        System.out.println("-- com.sl.Brand name is " +p1Brand.getName());
 
     }
 }
