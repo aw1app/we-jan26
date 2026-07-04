@@ -14,6 +14,7 @@ public class MyAspect {
         System.out.println(" myAspect1 before " );
     }
 
+    // This 'after' advice is only for BankAccount's getBalance() method
     @After("execution(* com.sl.BankAccount.getBalance(..))")
     public void myAspect2(){
         System.out.println(" myAspect1 after " );
