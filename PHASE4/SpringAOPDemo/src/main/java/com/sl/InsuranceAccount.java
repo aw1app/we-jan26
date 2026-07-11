@@ -22,9 +22,14 @@ public class InsuranceAccount implements IAccount{
         this.balance = this.balance + amount;
     }
 
-    public void withdraw(double amount) {
+    public double withdraw(double amount) {
         System.out.println("PostOfficeAccount In withdraw ");
-        this.balance = this.balance - amount;
+        return this.balance = this.balance - amount;
+    }
+
+    public void withdrawOnHolidays(double amount) throws Exception{
+        System.out.println(" In withdrawOnHolidays ");
+        throw new Exception("Withdrawals on Bank Holiday is not allowed!");
     }
 
     public double getBalance() {

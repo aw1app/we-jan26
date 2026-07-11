@@ -24,9 +24,15 @@ public class BankAccount implements IAccount{
         this.balance = this.balance + amount;
     }
 
-    public void withdraw(double amount) {
+    public double withdraw(double amount) {
         System.out.println(" In withdraw ");
         this.balance = this.balance - amount;
+        return this.balance;
+    }
+
+    public void withdrawOnHolidays(double amount) throws Exception{
+        System.out.println(" In withdrawOnHolidays ");
+        throw new Exception("Withdrawals on Bank Holiday is not allowed!");
     }
 
     public double getBalance() {

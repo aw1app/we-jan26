@@ -20,9 +20,15 @@ public class ProjectMain {
 
         acct1.deposit(1000f); // Before,  After
 
-        acct1.withdraw(500f); //  Before,  After
+        acct1.withdraw(500f); //  Before,  After, AfterReturning
 
         System.out.println("Balance is " + acct1.getBalance()); //  Before,  After, Around
+
+        try {
+            acct1.withdrawOnHolidays(1000d);
+        } catch (Exception e) {
+            //
+        }// @AfterThrowing
 
 
 //        IAccount acct2 = context.getBean("poAcct1", IAccount.class);
