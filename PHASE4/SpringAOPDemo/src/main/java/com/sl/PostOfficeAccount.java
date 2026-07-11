@@ -6,10 +6,11 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("bankAcct1")
-//@Qualifier("bankAcct1")
+@Component("poAcct1")
+//@Qualifier("poAcct1")
+//@Primary
 //@Scope("singleton")
-public class BankAccount implements IAccount{
+public class PostOfficeAccount implements IAccount{
 
     private double balance = 0;
 
@@ -19,18 +20,19 @@ public class BankAccount implements IAccount{
         return addr;
     }
 
+
     public void deposit(double amount) {
-        System.out.println(" In deposit ");
+        System.out.println("PostOfficeAccount In deposit ");
         this.balance = this.balance + amount;
     }
 
     public void withdraw(double amount) {
-        System.out.println(" In withdraw ");
+        System.out.println("PostOfficeAccount In withdraw ");
         this.balance = this.balance - amount;
     }
 
     public double getBalance() {
-        System.out.println(" In getBalance ");
+        System.out.println("PostOfficeAccount In getBalance ");
         return this.balance;
     }
 }
