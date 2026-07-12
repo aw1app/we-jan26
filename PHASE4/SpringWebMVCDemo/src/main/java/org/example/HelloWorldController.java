@@ -10,7 +10,13 @@ public class HelloWorldController {
     @GetMapping("/path1")
     @ResponseBody
     public String method1(){
-        return "Hello World";
+        return "Hello World Sunday";
+    }
+
+    @GetMapping("/path2")
+    public String method2(){
+
+        return "Hello-2"; // will render Hello-2.jsp from the /WEB-INF/views/ folder
     }
 
 }
