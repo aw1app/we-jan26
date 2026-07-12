@@ -29,4 +29,5 @@ public class ProductController {
                 "<br>" + "Name :" + product.getName() + "    Price :" + product.getPrice();
     }
 
+    // TASK-1 Add a form feild in new product for specifying in stock (radio button)
 }
