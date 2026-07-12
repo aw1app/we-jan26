@@ -20,11 +20,22 @@ public class ProductDAO {
     }
 
     //CRUD Ops
+    //1. Listing
     public List<Product> getAllProducts(){
         String sqlCommand = "select * from products";
         List<Product> products = jdbcTemplate.query(sqlCommand, new ProductRowMapper());
 
         return products;
+    }
+
+    //TASK-2 Add a new product
+    public void addProduct( Product product){
+        String sqlCommand = " INSERT INTO products (name,price,description) VALUES (?,?,?)";
+        jdbcTemplate.update(sqlCommand,
+                product.getName(),
+                product.getPrice(),
+                product.getDescription()
+        );
     }
 
 }

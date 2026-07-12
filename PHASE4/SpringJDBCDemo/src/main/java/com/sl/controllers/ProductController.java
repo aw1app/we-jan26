@@ -30,12 +30,12 @@ public class ProductController {
         return "new-product-form"; // go to new-product-form.jsp
     }
 
-    /*FORM PROCESSING APPROACH -2b */
+
     @PostMapping("/new-product")
     public String method2(Product product, Model model) {
+        productDAO.addProduct(product);
+
         model.addAttribute("product", product);
         return "new-product-success"; // goes to new-product-success.jsp
     }
-
-    // TASK-1 Add a form feild in new product for specifying in stock (radio button)
 }
