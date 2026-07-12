@@ -15,8 +15,9 @@ public class HelloWorldController {
 
     @GetMapping("/path2")
     public String method2(){
-
         return "Hello-2"; // will render Hello-2.jsp from the /WEB-INF/views/ folder
     }
+
+
 
 }
