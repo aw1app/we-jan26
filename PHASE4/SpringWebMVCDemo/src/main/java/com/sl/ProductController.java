@@ -1,7 +1,9 @@
 package com.sl;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductController {
@@ -21,12 +23,21 @@ public class ProductController {
     }
      */
 
-    /*FORM PROCESSING APPROACH -2 */
+    /*FORM PROCESSING APPROACH -2a */
+    /*
     @PostMapping("/new-product")
     @ResponseBody
     public String method2(Product product) {
         return "Successfully added the new product! " +
                 "<br>" + "Name :" + product.getName() + "    Price :" + product.getPrice();
+    }
+     */
+
+    /*FORM PROCESSING APPROACH -2b */
+    @PostMapping("/new-product")
+    public String method2(Product product, Model model) {
+        model.addAttribute("product", product);
+        return "new-product-success"; // goes to new-product-success.jsp
     }
 
     // TASK-1 Add a form feild in new product for specifying in stock (radio button)
