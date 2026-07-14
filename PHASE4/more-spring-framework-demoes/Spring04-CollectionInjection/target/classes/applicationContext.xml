@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="college" class="com.sl.College">
+        <property name="name" value="State University"/>
+        <property name="departments">
+            <list>
+                <value>Computer Science</value>
+                <value>Physics</value>
+            </list>
+        </property>
+        <property name="courses">
+            <set>
+                <value>Java 101</value>
+                <value>Quantum Mechanics</value>
+            </set>
+        </property>
+        <property name="facultyMapping">
+            <map>
+                <entry key="CS101" value="Dr. Smith"/>
+                <entry key="PHY201" value="Dr. Jones"/>
+            </map>
+        </property>
+        <property name="contactInfo">
+            <props>
+                <prop key="email">info@state.edu</prop>
+                <prop key="phone">123-456-7890</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

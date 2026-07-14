@@ -1,0 +1,3 @@
+[Annotation Lifecycle] MessageService initialized with message: Hello Lifecycle
+Service message: Hello Lifecycle
+[Annotation Lifecycle] MessageService is about to be destroyed

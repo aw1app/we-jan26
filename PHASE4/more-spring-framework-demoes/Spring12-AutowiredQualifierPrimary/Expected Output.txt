@@ -1,0 +1,2 @@
+[Card] Paid: 250.0
+[UPI] Paid: 250.0

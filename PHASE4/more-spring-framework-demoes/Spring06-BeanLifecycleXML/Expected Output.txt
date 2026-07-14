@@ -1,0 +1,3 @@
+[XML Lifecycle] Initializing database connection to: prod_db
+Using DB: prod_db
+[XML Lifecycle] Closing database connection to: prod_db

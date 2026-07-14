@@ -1,0 +1,3 @@
+Is Greater: true
+Ternary: No
+Elvis: Default Name

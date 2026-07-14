@@ -1,0 +1,3 @@
+Restaurant: Gourmet Bistro
+Menu Items: [Pizza, Burger, Pasta]
+Prices: {Pizza=12.99, Burger=8.49, Pasta=10.99}

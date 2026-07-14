@@ -1,0 +1,3 @@
+[Interface Lifecycle] FileService initialized. File: report.txt
+Writing to: report.txt
+[Interface Lifecycle] FileService destroyed. Saved file: report.txt

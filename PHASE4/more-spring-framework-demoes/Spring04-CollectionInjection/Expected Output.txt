@@ -1,0 +1,6 @@
+College Name: State University
+Departments: [Computer Science, Physics]
+Courses: [Java 101, Quantum Mechanics]
+Faculty: {CS101=Dr. Smith, PHY201=Dr. Jones}
+Contact Phone: 123-456-7890
+Contact Email: info@state.edu
