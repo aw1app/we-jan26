@@ -1,8 +1,15 @@
 package com.sl.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String name;
     float price;
     String description;
