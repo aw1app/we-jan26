@@ -14,9 +14,8 @@ public class HomeController {
     }
 
     @GetMapping("/home2")
-    @ResponseBody
     public String home2(){
-        return "Welcome Home 2!";
+        return "home2"; // home2.jsp in webapp/WEB-INF/views
     }
 
 
