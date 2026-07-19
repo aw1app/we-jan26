@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("products")
 public class ProductController {
 
     @Autowired
@@ -23,6 +24,21 @@ public class ProductController {
 
         return  products;
     }
+
+
+    @GetMapping("/product/{id}")
+    public Product getProduct(@PathVariable("id") int id){
+         Product prod1 = null;
+
+        Optional<Product> optionalProduct =  productRepositry.findById(id);
+
+        if (optionalProduct.isPresent())
+            prod1=optionalProduct.get();
+
+         return prod1;
+    }
+
+    // TASK-1: Implement /delete/{id}
 
 //    @GetMapping("/{id}")
 //    public Product getProduct(@PathVariable("id") int id){
