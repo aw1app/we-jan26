@@ -12,6 +12,7 @@ public class Product {
     @Column(name="id")
     int id;
 
+    //TASK-4: Add a constraint that wil disallow names with less than 3 chars
     String name;
 
     @Min(value=100, message="product price cannot be less than 100!")

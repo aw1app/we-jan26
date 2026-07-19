@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>sprint-rest-demo</artifactId>
+    <artifactId>sprint-rest-data-jpa-validation-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sprint-rest-demo</name>
-    <description>sprint-rest-demo</description>
+    <name>sprint-rest-data-jpa-validation-demo</name>
+    <description>sprint-rest-data-jpa-validation-demo</description>
     <url/>
     <licenses>
         <license/>
