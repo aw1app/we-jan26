@@ -72,7 +72,7 @@ public class ProductController {
             prod.setDescription(product.getDescription());
 
             productRepositry.save(prod);
-            return "Product updated succesfully ID=" + productAdded.getId();
+            return "Product updated succesfully for ID=" + prod.getId();
         }
         else
         return "Product update failed";
