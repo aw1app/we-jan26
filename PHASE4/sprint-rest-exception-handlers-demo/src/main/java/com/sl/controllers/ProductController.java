@@ -90,10 +90,10 @@ public class ProductController {
     }
 
 
-    @ExceptionHandler(ProductNotFoundException.class)
-    public String handleProductNotFoundException(Exception ex){
-        return "Operation did not complete successfully. Because " + ex.getMessage() + ". Contact Customer Care.";
-    }
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    public String handleProductNotFoundException(Exception ex){
+//        return "Operation did not complete successfully. Because " + ex.getMessage() + ". Contact Customer Care.";
+//    }
 
 //    @GetMapping("/{id}")
 //    public Product getProduct(@PathVariable("id") int id){
