@@ -24,12 +24,12 @@ public class ProductController {
         return  products;
     }
 
-    @GetMapping("/{id}")
-    public Product getProduct(@PathVariable("id") int id){
-         Product prod1 = new Product(id, "Dell PC 1 ", 10000.0f, "High end PC");
-
-         return prod1;
-    }
+//    @GetMapping("/{id}")
+//    public Product getProduct(@PathVariable("id") int id){
+//         Product prod1 = new Product(id, "Dell PC 1 ", 10000.0f, "High end PC");
+//
+//         return prod1;
+//    }
 
 
 
