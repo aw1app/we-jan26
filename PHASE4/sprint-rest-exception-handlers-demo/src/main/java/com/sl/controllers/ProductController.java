@@ -1,6 +1,7 @@
 package com.sl.controllers;
 
 import com.sl.entities.Product;
+import com.sl.exceptions.ProductNotFoundException;
 import com.sl.repositries.ProductRepositry;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -41,13 +42,14 @@ public class ProductController {
     // TASK-1: Implement /delete/{id}
 
     @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable("id") int id) {
+    public String deleteProduct(@PathVariable("id") int id) throws ProductNotFoundException {
         Optional<Product> optionalProduct = productRepositry.findById(id);
         if (optionalProduct.isPresent()) {
             productRepositry.deleteById(id);
             return "Product found and Deleted";
+        } else {
+            throw new ProductNotFoundException("Product with id " + id + " does not exist!");
         }
-        return "Product not found.";
     }
 
     // TASK-2: Implement /add
@@ -87,6 +89,11 @@ public class ProductController {
             return "Product update failed";
     }
 
+
+    @ExceptionHandler(ProductNotFoundException.class)
+    public String handleProductNotFoundException(Exception ex){
+        return "Operation did not complete successfully. Because " + ex.getMessage() + ". Contact Customer Care.";
+    }
 
 //    @GetMapping("/{id}")
 //    public Product getProduct(@PathVariable("id") int id){
