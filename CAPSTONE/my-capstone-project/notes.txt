@@ -1,0 +1,23 @@
+Last Session
+
+Eureka Server 8761
+Config Server 8888
+
+API Gateway 8080
+
+User Service (MongoDB)
+Food Service (MongoDB) - model+repositry+controller (Restaurant, Dish)
+Order Service (MySQL)
+
+Front-End (React)
+npm create vite@latest foodie-frontend-react -- --template react
+npm install react-router-dom axios
+
+mvn clean spring-boot:run
+
+User login/register , restaurants , dishes  , cart , checkout + order
+
+NavBar
+------- Login / Cart (Global Context)
+
+
