@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {AuthProvider} from "./context/AuthContext.jsx";
 import {CartProvider} from "./context/CartContext.jsx";
-import {Navigate, Route, Router, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Router, Routes} from "react-router-dom";
 import {Navbar} from "./components/Navbar.jsx";
 import {Login} from "./pages/Login.jsx";
 import {Register} from "./pages/Register.jsx";
@@ -16,7 +16,7 @@ function App() {
   return (
       <AuthProvider>
         <CartProvider>
-          <Router>
+          <BrowserRouter>
             <Navbar />
             <Routes>
               <Route path="/" element={<Navigate to="/restaurants" replace />} />
@@ -30,7 +30,7 @@ function App() {
               <Route path="/profile" element={<UserProfile />} />
               <Route path="*" element={<Navigate to="/restaurants" replace />} />
             </Routes>
-          </Router>
+          </BrowserRouter>
         </CartProvider>
       </AuthProvider>
   );
